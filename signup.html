@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sign Up — Create your demonstration traveler account or admin profile with Stackly.">
+  <title>Sign Up — Stackly Platform</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Page-Specific Stylesheet -->
+  <link rel="stylesheet" href="css/signup.css">
+</head>
+<body>
+
+  <main class="auth-wrapper" role="main">
+    <!-- Back to Home Link -->
+    <a href="index.html" class="back-home-link" aria-label="Return to Eco Tourism homepage">
+      <i class="fa-solid fa-arrow-left"></i> Back to Home
+    </a>
+
+    <!-- Header & Brand Logo -->
+    <header class="auth-header">
+      <a href="index.html">
+        <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="auth-brand-logo">
+      </a>
+      <h1 class="auth-title">Begin Your Journey</h1>
+      <p class="auth-subtitle">Create a demo traveler account or admin profile</p>
+    </header>
+
+    <!-- Account Type Selection (User vs Admin) -->
+    <div class="role-selector" role="radiogroup" aria-label="Select Account Type">
+      <div>
+        <input type="radio" id="signupRoleUser" name="accountType" value="user" class="role-radio-input" checked>
+        <label for="signupRoleUser" class="role-radio-label">
+          <i class="fa-solid fa-user"></i> Individual Traveler
+        </label>
+      </div>
+      <div>
+        <input type="radio" id="signupRoleAdmin" name="accountType" value="admin" class="role-radio-input">
+        <label for="signupRoleAdmin" class="role-radio-label">
+          <i class="fa-solid fa-user-shield"></i> Platform Admin
+        </label>
+      </div>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="signupForm" novalidate>
+      <div class="form-group">
+        <label for="signupName" class="form-label">Full Name *</label>
+        <input type="text" id="signupName" class="form-control" placeholder="e.g. Maya Lin" required>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="signupEmail" class="form-label">Email Address *</label>
+          <input type="email" id="signupEmail" class="form-control" placeholder="maya@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPhone" class="form-label">Phone Number (Optional)</label>
+          <input type="tel" id="signupPhone" class="form-control" placeholder="+1 (555) 019-2831">
+        </div>
+      </div>
+
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="signupPassword" class="form-label">Create Password *</label>
+          <input type="password" id="signupPassword" class="form-control" placeholder="Min 6 characters" required>
+        </div>
+        <div class="form-group">
+          <label for="signupConfirmPassword" class="form-label">Confirm Password *</label>
+          <input type="password" id="signupConfirmPassword" class="form-control" placeholder="Re-enter password" required>
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <label class="checkbox-label" for="signupTerms">
+          <input type="checkbox" id="signupTerms" required>
+          <span>I agree to the <a href="about.html#guidelines" target="_blank">Demonstration Guidelines</a> and understand this is an educational mock travel platform.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn-auth-submit">
+        <i class="fa-solid fa-user-plus"></i> Create Demo Account
+      </button>
+
+      <div id="signupFeedback"></div>
+    </form>
+
+    <!-- Footer Links -->
+    <footer class="auth-footer">
+      Already have an account <a href="login.html">Login</a>
+    </footer>
+  </main>
+
+  <!-- Master JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

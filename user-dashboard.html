@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Traveler Dashboard &mdash; Manage saved eco destinations, planned trips, packing checklists, and budget estimates.">
+  <title>Traveler Dashboard &mdash; Stackly Platform</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Page-Specific Stylesheet -->
+  <link rel="stylesheet" href="css/user-dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- ======================================================================
+         SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Dashboard Sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-link">
+          <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="brand-logo-img">
+          <span class="brand-text">STACK<span>LY</span></span>
+        </a>
+        <button class="sidebar-close-btn" aria-label="Close sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-label">Traveler Portal</div>
+        
+        <a href="#overview" class="dash-nav-link active" data-view="overview">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Overview</span>
+        </a>
+
+        <a href="#my-trips" class="dash-nav-link" data-view="my-trips">
+          <i class="fa-solid fa-suitcase-rolling"></i>
+          <span>My Trips</span>
+        </a>
+
+        <a href="#saved-destinations" class="dash-nav-link" data-view="saved-destinations">
+          <i class="fa-solid fa-heart"></i>
+          <span>Saved Destinations</span>
+        </a>
+
+        <a href="#travel-planner" class="dash-nav-link" data-view="travel-planner">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Travel Planner</span>
+        </a>
+
+        <a href="#documents-checklist" class="dash-nav-link" data-view="documents-checklist">
+          <i class="fa-solid fa-list-check"></i>
+          <span>Documents & Checklist</span>
+        </a>
+
+        <a href="#profile-settings" class="dash-nav-link" data-view="profile-settings">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Profile & Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="logout-link">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Exit / Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Drawer Backdrop Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <main class="dashboard-main" role="main">
+      <!-- Dashboard Top Header -->
+      <header class="dashboard-header">
+        <div class="header-left">
+          <button class="sidebar-toggle-btn" aria-label="Open sidebar drawer">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="header-greeting">
+            <h2>Welcome, <span class="dynamic-user-name">Traveler</span></h2>
+            <p>Plan, calculate, and prepare for your sustainable expeditions</p>
+          </div>
+        </div>
+
+        <!-- Center Brand (Visible on Mobile Responsive Header) -->
+        <a href="index.html" class="header-mobile-brand" aria-label="Stackly Home">
+          <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="mobile-brand-logo">
+          <span class="mobile-brand-text">STACK<span>LY</span></span>
+        </a>
+
+        <div class="header-right">
+          <div class="demo-date-pill">
+            <i class="fa-solid fa-calendar-day"></i>
+            <span>Oct 29, 2026 (Demo)</span>
+          </div>
+
+          <!-- Notification Bell Button (Visible on Mobile Responsive Header) -->
+          <a href="404.html" class="header-notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge">4</span>
+          </a>
+
+          <div class="header-user-pill">
+            <div class="header-avatar-initials" id="headerAvatarInitials">TR</div>
+            <div class="header-user-info">
+              <span id="headerUserName" class="dynamic-user-name">Traveler</span>
+              <small id="headerUserEmail" class="dynamic-user-email">traveler@stackly.com</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Scrollable Dashboard Content Area -->
+      <div class="dashboard-content-area">
+
+        <!-- ==================================================================
+             VIEW 1: OVERVIEW
+             ================================================================== -->
+        <section id="view-overview" class="dashboard-view active">
+          <!-- Mobile Welcome Section (Matches Example Design) -->
+          <div class="dashboard-welcome-section">
+            <div class="welcome-top-row">
+              <div class="welcome-icon-box">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div class="welcome-text-content">
+                <h2 class="welcome-title">
+                  <span class="welcome-greeting-prefix">GOOD MORNING,</span>
+                  <span class="dynamic-user-name welcome-user-name">RASHEEYARASH</span>
+                </h2>
+                <p class="welcome-subtitle">Here's what's happening with your event platform today.</p>
+              </div>
+            </div>
+
+            <div class="welcome-action-row">
+              <div class="welcome-date-block">
+                <i class="fa-regular fa-calendar"></i>
+                <div class="welcome-date-text">
+                  <div class="welcome-date-main">
+                    <span>Apr</span>
+                    <span>25,</span>
+                    <span>2025</span>
+                  </div>
+                  <span class="welcome-date-day">Friday</span>
+                </div>
+              </div>
+
+              <a href="404.html" class="welcome-cta-btn">
+                <i class="fa-solid fa-plus"></i> Create New Event
+              </a>
+            </div>
+          </div>
+
+          <div class="view-header">
+            <div>
+              <h2>Traveler Overview</h2>
+              <p>Real-time status of your simulated journeys and conservation milestones.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-circle-info"></i> All data is client-side demonstration only</span>
+            </div>
+          </div>
+
+          <!-- 4 Summary Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-heart"></i></div>
+              <div class="summary-info">
+                <span>Saved Destinations</span>
+                <h4>4</h4>
+                <small>Session Favorites</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="summary-info">
+                <span>Planned Trips</span>
+                <h4>2</h4>
+                <small>Upcoming Demo</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-compass"></i></div>
+              <div class="summary-info">
+                <span>Upcoming Activities</span>
+                <h4>3</h4>
+                <small>Low-Impact Tiers</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="summary-info">
+                <span>Completed Trips</span>
+                <h4>1</h4>
+                <small>100% Zero-Trace</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Chart: Monthly Carbon Offset -->
+          <div class="dash-chart-panel">
+            <div class="dash-chart-header">
+              <div class="dash-chart-title">
+                <i class="fa-solid fa-chart-simple text-accent"></i> Monthly Carbon Offset & Trekking Hours (2026)
+              </div>
+              <div class="dash-chart-legend">
+                <span><i class="chart-legend-dot orange"></i> Carbon Offset (kg)</span>
+                <span><i class="chart-legend-dot charcoal"></i> Trekking Hours</span>
+              </div>
+            </div>
+            <div class="chart-bars-container">
+              <div class="chart-bar-group">
+                <div class="chart-bar-pillar" style="height: 45%;" data-tooltip="120 kg"></div>
+                <span class="chart-bar-name">Jan</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-pillar" style="height: 65%;" data-tooltip="180 kg"></div>
+                <span class="chart-bar-name">Feb</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-pillar" style="height: 55%;" data-tooltip="150 kg"></div>
+                <span class="chart-bar-name">Mar</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-pillar" style="height: 85%;" data-tooltip="240 kg"></div>
+                <span class="chart-bar-name">Apr</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-pillar" style="height: 75%;" data-tooltip="210 kg"></div>
+                <span class="chart-bar-name">May</span>
+              </div>
+              <div class="chart-bar-group">
+                <div class="chart-bar-pillar" style="height: 95%;" data-tooltip="290 kg"></div>
+                <span class="chart-bar-name">Jun</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview Panels Grid -->
+          <div class="dash-grid-2" style="margin-top: 24px;">
+            <!-- Next Upcoming Trip Preview -->
+            <div class="dash-panel">
+              <div class="panel-header">
+                <h3 class="panel-title"><i class="fa-solid fa-clock"></i> Next Upcoming Demo Trip</h3>
+                <span class="dash-status-badge active">In 14 Days</span>
+              </div>
+              
+              <div class="user-trip-card" style="box-shadow: none; border-color: transparent; padding: 0;">
+                <div class="trip-main-info">
+                  <img src="assets/images/tour-rainforest.webp" alt="Olympic Rainforest Trek" class="trip-thumb">
+                  <div>
+                    <h4 class="trip-name">Olympic Rainforest & Canopy Sanctuary</h4>
+                    <div class="trip-dest"><i class="fa-solid fa-location-dot"></i> Olympic Peninsula, WA (Demo)</div>
+                    <div style="font-size: 0.82rem; color: var(--primary-muted); margin-top: 4px;">
+                      <i class="fa-solid fa-calendar"></i> Nov 12 &ndash; Nov 17, 2026 | 2 Travelers
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-actions-strip">
+                <a href="404.html" class="btn btn-accent btn-sm">
+                  <i class="fa-solid fa-list-check"></i> View Gear Checklist
+                </a>
+                <a href="404.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-calculator"></i> Adjust Budget
+                </a>
+              </div>
+            </div>
+
+            <!-- Stewardship Milestones -->
+            <div class="dash-panel">
+              <div class="panel-header">
+                <h3 class="panel-title"><i class="fa-solid fa-leaf"></i> Stewardship Milestones</h3>
+              </div>
+              <ul style="display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem;">
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <i class="fa-solid fa-circle-check" style="color: var(--accent); margin-top: 4px;"></i>
+                  <span><strong>Zero single-use plastics packed</strong> for next journey.</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <i class="fa-solid fa-circle-check" style="color: var(--accent); margin-top: 4px;"></i>
+                  <span>Completed Leave-No-Trace trail safety refresher.</span>
+                </li>
+                <li style="display: flex; gap: 10px; align-items: flex-start;">
+                  <i class="fa-solid fa-circle-check" style="color: var(--accent); margin-top: 4px;"></i>
+                  <span>Selected renewable-energy eco-lodge accommodation.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Data Table: Recent Journey Activity -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-table-list"></i> Recent Booking Activity & Status</h3>
+              <a href="404.html" class="btn btn-outline btn-sm">Export All</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Trip ID</th>
+                    <th>Destination Title</th>
+                    <th>Travel Dates</th>
+                    <th>Travelers</th>
+                    <th>Eco-Rating</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#ST-8821</strong></td>
+                    <td>Olympic Canopy Walk</td>
+                    <td>Nov 12 &ndash; 17, 2026</td>
+                    <td>2 Travelers</td>
+                    <td><span class="dash-status-badge active"><i class="fa-solid fa-leaf"></i> 98% Eco</span></td>
+                    <td><span class="dash-status-badge confirmed">Confirmed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">View Details</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#ST-7940</strong></td>
+                    <td>Cascades Alpine Ridge</td>
+                    <td>Aug 14 &ndash; 19, 2026</td>
+                    <td>1 Traveler</td>
+                    <td><span class="dash-status-badge active"><i class="fa-solid fa-leaf"></i> 95% Eco</span></td>
+                    <td><span class="dash-status-badge completed">Completed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Review Trip</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#ST-6512</strong></td>
+                    <td>Redwood Forest Sanctuary</td>
+                    <td>May 02 &ndash; 07, 2026</td>
+                    <td>3 Travelers</td>
+                    <td><span class="dash-status-badge active"><i class="fa-solid fa-leaf"></i> 100% Eco</span></td>
+                    <td><span class="dash-status-badge completed">Completed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Certificate</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 2: MY TRIPS
+             ================================================================== -->
+        <section id="view-my-trips" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>My Travel Itineraries</h2>
+              <p>Explore your confirmed demonstration bookings and historical nature retreats.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-circle-info"></i> Sample itineraries only &mdash; no actual commercial booking exists</span>
+            </div>
+          </div>
+
+          <!-- 4 Statistics Metrics Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-route"></i></div>
+              <div class="summary-info">
+                <span>Total Journeys</span>
+                <h4>3 Trips</h4>
+                <small class="trend-up"><i class="fa-solid fa-circle-check"></i> 1 Upcoming</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-person-hiking"></i></div>
+              <div class="summary-info">
+                <span>Wilderness Distance</span>
+                <h4>248 km</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-location-crosshairs"></i> Trail logged</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <div class="summary-info">
+                <span>Zero-Trace Score</span>
+                <h4>100%</h4>
+                <small class="trend-up"><i class="fa-solid fa-leaf"></i> Zero single-use</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="summary-info">
+                <span>Naturalists Assigned</span>
+                <h4>4 Guides</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-award"></i> Certified biologists</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trip Search & Status Filters -->
+          <div style="display: flex; gap: 14px; margin: 24px 0; flex-wrap: wrap;">
+            <input type="text" id="userTripSearch" class="form-control" placeholder="Search my trips by name or destination..." style="max-width: 340px;">
+            <div style="display: flex; gap: 8px;">
+              <a href="404.html" class="btn btn-outline btn-sm active">All Trips</a>
+              <a href="404.html" class="btn btn-outline btn-sm">Upcoming</a>
+              <a href="404.html" class="btn btn-outline btn-sm">Completed</a>
+            </div>
+          </div>
+
+          <!-- Trip Cards List -->
+          <div class="trips-list">
+            <!-- Trip 1: Upcoming -->
+            <div class="user-trip-card" data-status="upcoming">
+              <div class="trip-main-info">
+                <img src="assets/images/tour-rainforest.webp" alt="Olympic Rainforest Trek" class="trip-thumb">
+                <div>
+                  <h4 class="trip-name">Olympic Rainforest & Canopy Sanctuary</h4>
+                  <div class="trip-dest"><i class="fa-solid fa-location-dot"></i> Olympic Peninsula, WA (Demo)</div>
+                  <div style="font-size: 0.8rem; color: var(--primary-muted); margin-top: 4px;">
+                    <i class="fa-solid fa-calendar"></i> Nov 12 &ndash; Nov 17, 2026 | 2 Travelers
+                  </div>
+                </div>
+              </div>
+              <div class="trip-card-actions">
+                <span class="dash-status-badge active"><i class="fa-solid fa-calendar-check"></i> Nov 2026</span>
+                <a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-lines"></i> Itinerary</a>
+              </div>
+            </div>
+
+            <!-- Trip 2: Completed -->
+            <div class="user-trip-card" data-status="completed">
+              <div class="trip-main-info">
+                <img src="assets/images/tour-peaks.webp" alt="Cascades Mountain Sanctuary" class="trip-thumb">
+                <div>
+                  <h4 class="trip-name">Cascades Alpine Ridge Wilderness</h4>
+                  <div class="trip-dest"><i class="fa-solid fa-location-dot"></i> North Cascades, WA (Demo)</div>
+                  <div style="font-size: 0.8rem; color: var(--primary-muted); margin-top: 4px;">
+                    <i class="fa-solid fa-calendar"></i> Aug 14 &ndash; Aug 19, 2026 | 1 Traveler
+                  </div>
+                </div>
+              </div>
+              <div class="trip-card-actions">
+                <span class="dash-status-badge completed"><i class="fa-solid fa-check-circle"></i> Completed</span>
+                <a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-award"></i> Certificate</a>
+              </div>
+            </div>
+
+            <!-- Trip 3: Completed -->
+            <div class="user-trip-card" data-status="completed">
+              <div class="trip-main-info">
+                <img src="assets/images/dest-forest.webp" alt="Redwood Canopy Sanctuary" class="trip-thumb">
+                <div>
+                  <h4 class="trip-name">Ancient Redwood Biome Exploration</h4>
+                  <div class="trip-dest"><i class="fa-solid fa-location-dot"></i> Humboldt County, CA (Demo)</div>
+                  <div style="font-size: 0.8rem; color: var(--primary-muted); margin-top: 4px;">
+                    <i class="fa-solid fa-calendar"></i> May 02 &ndash; May 07, 2026 | 3 Travelers
+                  </div>
+                </div>
+              </div>
+              <div class="trip-card-actions">
+                <span class="dash-status-badge completed"><i class="fa-solid fa-check-circle"></i> Completed</span>
+                <a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> Field Log</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Meters: Trail Terrain & Impact Ratings -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-chart-line text-accent"></i> Trail Conservation & Terrain Ratings</h3>
+            </div>
+            <div class="progress-meters-grid">
+              <div class="progress-meter-card">
+                <div class="progress-meter-top">
+                  <span>Olympic Canopy Sanctuary</span>
+                  <span>98% Zero-Trace</span>
+                </div>
+                <div class="progress-meter-track">
+                  <div class="progress-meter-fill" style="width: 98%;"></div>
+                </div>
+              </div>
+              <div class="progress-meter-card">
+                <div class="progress-meter-top">
+                  <span>Cascades Alpine Ridge</span>
+                  <span>95% Zero-Trace</span>
+                </div>
+                <div class="progress-meter-track">
+                  <div class="progress-meter-fill" style="width: 95%;"></div>
+                </div>
+              </div>
+              <div class="progress-meter-card">
+                <div class="progress-meter-top">
+                  <span>Redwood Biome Sanctuary</span>
+                  <span>100% Zero-Trace</span>
+                </div>
+                <div class="progress-meter-track">
+                  <div class="progress-meter-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Master Itinerary Ledger Table -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-list-ol"></i> Master Itinerary Ledger</h3>
+              <a href="404.html" class="btn btn-accent btn-sm"><i class="fa-solid fa-plus"></i> Plan Next Trip</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Trip ID</th>
+                    <th>Itinerary Title</th>
+                    <th>Region</th>
+                    <th>Duration</th>
+                    <th>Group Size</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#TR-104</strong></td>
+                    <td>Olympic Rainforest & Canopy</td>
+                    <td>Pacific Northwest</td>
+                    <td>6 Days</td>
+                    <td>2 Persons</td>
+                    <td><span class="dash-status-badge active">Upcoming</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Manage</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#TR-092</strong></td>
+                    <td>Cascades Alpine Ridge</td>
+                    <td>North Cascades</td>
+                    <td>5 Days</td>
+                    <td>1 Person</td>
+                    <td><span class="dash-status-badge completed">Completed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Archive</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#TR-081</strong></td>
+                    <td>Redwood Biome Exploration</td>
+                    <td>Northern California</td>
+                    <td>5 Days</td>
+                    <td>3 Persons</td>
+                    <td><span class="dash-status-badge completed">Completed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Archive</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 3: SAVED DESTINATIONS
+             ================================================================== -->
+        <section id="view-saved-destinations" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Saved Destinations</h2>
+              <p>Explore your favorite biospheres and check wilderness permit quotas.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-circle-info"></i> Session Favorites</span>
+            </div>
+          </div>
+
+          <!-- 4 Statistics Metrics Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-heart"></i></div>
+              <div class="summary-info">
+                <span>Wishlist Biomes</span>
+                <h4>4 Refuges</h4>
+                <small class="trend-up"><i class="fa-solid fa-circle-check"></i> High Biodiversity</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="summary-info">
+                <span>Average Eco-Score</span>
+                <h4>98.2%</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Minimal impact</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-ticket"></i></div>
+              <div class="summary-info">
+                <span>Permit Availability</span>
+                <h4>85% Open</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-calendar"></i> Season 2026</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+              <div class="summary-info">
+                <span>Avg Stay Duration</span>
+                <h4>5.2 Days</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-mountain-sun"></i> Low foot-traffic</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Saved Destination Cards Grid -->
+          <div class="saved-dest-grid" style="margin-top: 24px;">
+            <article class="saved-dest-card">
+              <div class="saved-dest-media">
+                <img src="assets/images/dest-forest.webp" alt="Olympic Canopy Sanctuary" class="saved-dest-img">
+                <a href="404.html" class="heart-toggle active" aria-label="Remove favorite"><i class="fa-solid fa-heart"></i></a>
+              </div>
+              <div class="saved-dest-body">
+                <div class="saved-dest-loc"><i class="fa-solid fa-location-dot"></i> Olympic Peninsula, WA</div>
+                <h4 class="saved-dest-title">Olympic Canopy Sanctuary</h4>
+                <p class="saved-dest-desc">Ancient hemlocks, suspended canopy walkway systems, and licensed naturalist guiding.</p>
+                <div class="dash-actions-strip" style="margin-top: 14px; padding-top: 10px;">
+                  <a href="404.html" class="btn btn-accent btn-sm">Plan Expedition</a>
+                  <a href="404.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="saved-dest-card">
+              <div class="saved-dest-media">
+                <img src="assets/images/dest-mountain.webp" alt="Cascades Mountain Range" class="saved-dest-img">
+                <a href="404.html" class="heart-toggle active" aria-label="Remove favorite"><i class="fa-solid fa-heart"></i></a>
+              </div>
+              <div class="saved-dest-body">
+                <div class="saved-dest-loc"><i class="fa-solid fa-location-dot"></i> North Cascades, WA</div>
+                <h4 class="saved-dest-title">Alpine Wilderness Refuge</h4>
+                <p class="saved-dest-desc">Glacial moraines, alpine meadows, and strict Leave-No-Trace camping corridors.</p>
+                <div class="dash-actions-strip" style="margin-top: 14px; padding-top: 10px;">
+                  <a href="404.html" class="btn btn-accent btn-sm">Plan Expedition</a>
+                  <a href="404.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="saved-dest-card">
+              <div class="saved-dest-media">
+                <img src="assets/images/dest-coastal.webp" alt="Coastal Fjord Sanctuary" class="saved-dest-img">
+                <a href="404.html" class="heart-toggle active" aria-label="Remove favorite"><i class="fa-solid fa-heart"></i></a>
+              </div>
+              <div class="saved-dest-body">
+                <div class="saved-dest-loc"><i class="fa-solid fa-location-dot"></i> San Juan Islands, WA</div>
+                <h4 class="saved-dest-title">Coastal Marine Fjord</h4>
+                <p class="saved-dest-desc">Protected kelp beds, kayak whale corridors, and clean solar-powered shoreline basecamps.</p>
+                <div class="dash-actions-strip" style="margin-top: 14px; padding-top: 10px;">
+                  <a href="404.html" class="btn btn-accent btn-sm">Plan Expedition</a>
+                  <a href="404.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="saved-dest-card">
+              <div class="saved-dest-media">
+                <img src="assets/images/dest-cultural.webp" alt="Heritage Valley Hamlet" class="saved-dest-img">
+                <a href="404.html" class="heart-toggle active" aria-label="Remove favorite"><i class="fa-solid fa-heart"></i></a>
+              </div>
+              <div class="saved-dest-body">
+                <div class="saved-dest-loc"><i class="fa-solid fa-location-dot"></i> Southwest Highlands, NM</div>
+                <h4 class="saved-dest-title">Heritage Valley Hamlet</h4>
+                <p class="saved-dest-desc">Indigenous agricultural stewardship, traditional adobe lodges, and artisan handicraft tours.</p>
+                <div class="dash-actions-strip" style="margin-top: 14px; padding-top: 10px;">
+                  <a href="404.html" class="btn btn-accent btn-sm">Plan Expedition</a>
+                  <a href="404.html" class="btn btn-outline btn-sm">Details</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Comparison Table: Protected Habitats Quota Matrix -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-scale-balanced text-accent"></i> Protected Biospheres Quota & Comparison Matrix</h3>
+              <a href="404.html" class="btn btn-outline btn-sm">Download Matrix</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Sanctuary Name</th>
+                    <th>Ecosystem Style</th>
+                    <th>Daily Visitor Cap</th>
+                    <th>Peak Season</th>
+                    <th>Permit Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Olympic Canopy</strong></td>
+                    <td>Temperate Rainforest</td>
+                    <td>24 Persons/day</td>
+                    <td>May &ndash; Oct</td>
+                    <td><span class="dash-status-badge verified">Available</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Reserve Permit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Alpine Wilderness</strong></td>
+                    <td>Glacial Alpine</td>
+                    <td>16 Persons/day</td>
+                    <td>Jul &ndash; Sep</td>
+                    <td><span class="dash-status-badge verified">Available</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Reserve Permit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Coastal Marine Fjord</strong></td>
+                    <td>Cold-Water Marine</td>
+                    <td>20 Persons/day</td>
+                    <td>Jun &ndash; Sep</td>
+                    <td><span class="dash-status-badge planning">Limited Slots</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Join Waitlist</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Heritage Valley</strong></td>
+                    <td>Arid Highland Hamlet</td>
+                    <td>18 Persons/day</td>
+                    <td>Sep &ndash; Nov</td>
+                    <td><span class="dash-status-badge verified">Available</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Reserve Permit</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 4: TRAVEL PLANNER
+             ================================================================== -->
+        <section id="view-travel-planner" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Interactive Travel Budget Calculator</h2>
+              <p>Simulate expedition budgets including eco-lodge lodgings, guided activities, and carbon offset contributions.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-circle-info"></i> Illustrative mathematical calculations</span>
+            </div>
+          </div>
+
+          <!-- 4 Statistics Metrics Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-dollar-sign"></i></div>
+              <div class="summary-info">
+                <span>Avg Daily Cost</span>
+                <h4>$140 / Day</h4>
+                <small class="trend-neutral">Lodging & guided activities</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-seedling"></i></div>
+              <div class="summary-info">
+                <span>Conservation Levy</span>
+                <h4>$35 / Person</h4>
+                <small class="trend-up"><i class="fa-solid fa-hand-holding-heart"></i> Direct habitat fund</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-tree"></i></div>
+              <div class="summary-info">
+                <span>Trees Planted</span>
+                <h4>18 Trees</h4>
+                <small class="trend-up"><i class="fa-solid fa-leaf"></i> Carbon sequestered</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="summary-info">
+                <span>Neutrality Guarantee</span>
+                <h4>100% Offset</h4>
+                <small class="trend-up"><i class="fa-solid fa-shield-check"></i> Gold standard audit</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Calculator Grid -->
+          <div class="calc-wrapper" style="margin-top: 24px;">
+            <div class="calc-form-card">
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin-bottom: 18px;">
+                <i class="fa-solid fa-sliders text-accent"></i> Trip Parameter Simulation
+              </h3>
+              <form id="budgetCalculatorForm">
+                <div class="form-group">
+                  <label for="calcDest" class="form-label">Destination Ecosystem *</label>
+                  <select id="calcDest" class="form-control" required>
+                    <option value="rainforest">Olympic Ancient Rainforest ($140/day)</option>
+                    <option value="alpine">Cascades Alpine Ridge ($160/day)</option>
+                    <option value="marine">Coastal Fjord Marine Reserve ($180/day)</option>
+                    <option value="cultural">Southwest Heritage Valley ($120/day)</option>
+                  </select>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="calcTravelers" class="form-label">Travelers (Max 8) *</label>
+                    <input type="number" id="calcTravelers" class="form-control" min="1" max="8" value="2" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="calcDays" class="form-label">Number of Days *</label>
+                    <input type="number" id="calcDays" class="form-control" min="2" max="21" value="5" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="calcLodgeTier" class="form-label">Eco-Lodging Tier *</label>
+                  <select id="calcLodgeTier" class="form-control" required>
+                    <option value="standard">Renewable Solar Eco-Lodge (Included)</option>
+                    <option value="canopy">Suspended Canopy Treehouse (+$40/night)</option>
+                    <option value="wilderness">Backcountry Low-Impact Hut (+$20/night)</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+                  <i class="fa-solid fa-calculator"></i> Calculate Cost & Carbon Offset
+                </button>
+              </form>
+            </div>
+
+            <!-- Calculation Output Display -->
+            <div class="calc-result-card">
+              <span class="calc-result-badge"><i class="fa-solid fa-leaf"></i> Estimated Projection</span>
+              <div class="calc-total-label">Estimated Total Budget</div>
+              <div class="calc-total-amount" id="calcTotal">$1,400</div>
+
+              <div class="calc-breakdown">
+                <div class="calc-breakdown-row">
+                  <span>Lodging & Sustainable Meals:</span>
+                  <span id="breakdownLodging">$900</span>
+                </div>
+                <div class="calc-breakdown-row">
+                  <span>Naturalist Guide Honorarium:</span>
+                  <span id="breakdownGuide">$350</span>
+                </div>
+                <div class="calc-breakdown-row">
+                  <span>Wilderness Restoration Levy:</span>
+                  <span id="breakdownConservation">$150</span>
+                </div>
+              </div>
+
+              <div class="dash-actions-strip" style="margin-top: 20px;">
+                <a href="404.html" class="btn btn-accent btn-sm" style="flex: 1;"><i class="fa-solid fa-bookmark"></i> Save Draft</a>
+                <a href="404.html" class="btn btn-outline btn-sm" style="flex: 1;"><i class="fa-solid fa-file-pdf"></i> PDF Quote</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Expense Allocation Table -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-receipt text-accent"></i> Itemized Expense Allocation & Fee Breakdown</h3>
+              <a href="404.html" class="btn btn-outline btn-sm">Export Financials</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Expense Component</th>
+                    <th>Service Provider</th>
+                    <th>Allocation Rate</th>
+                    <th>Simulated Cost</th>
+                    <th>Stewardship Factor</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Off-grid Solar Eco-Lodge</strong></td>
+                    <td>Olympic Sanctuary Lodge</td>
+                    <td>50% of budget</td>
+                    <td>$700</td>
+                    <td><span class="dash-status-badge verified">100% Clean Energy</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Auditing</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Certified Biologist Guide</strong></td>
+                    <td>Wilderness Naturalist Guild</td>
+                    <td>25% of budget</td>
+                    <td>$350</td>
+                    <td><span class="dash-status-badge verified">Fair Trade Living Wage</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Auditing</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Zero-Emission Transit</strong></td>
+                    <td>Clean Electric Shuttles</td>
+                    <td>15% of budget</td>
+                    <td>$200</td>
+                    <td><span class="dash-status-badge verified">Zero Tailpipe Emissions</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Auditing</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sanctuary Restoration Levy</strong></td>
+                    <td>Indigenous Land Trust</td>
+                    <td>10% of budget</td>
+                    <td>$150</td>
+                    <td><span class="dash-status-badge verified">Direct Habitat Funding</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Auditing</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 5: DOCUMENTS & CHECKLIST
+             ================================================================== -->
+        <section id="view-documents-checklist" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Documents & Packing Checklist</h2>
+              <p>Interactive preparation for zero-trace wilderness exploration.</p>
+            </div>
+            <div>
+              <a href="404.html" class="btn btn-accent btn-sm">
+                <i class="fa-solid fa-download"></i> Download Sample Itinerary (.txt)
+              </a>
+            </div>
+          </div>
+
+          <!-- 4 Statistics Metrics Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+              <div class="summary-info">
+                <span>Readiness Score</span>
+                <h4>92% Ready</h4>
+                <small class="trend-up"><i class="fa-solid fa-circle-check"></i> Field verified</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-passport"></i></div>
+              <div class="summary-info">
+                <span>Entry Passes</span>
+                <h4>3 Passes</h4>
+                <small class="trend-up"><i class="fa-solid fa-shield-check"></i> 100% Valid</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-backpack"></i></div>
+              <div class="summary-info">
+                <span>Gear Items Packed</span>
+                <h4>12 / 14</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-list"></i> 2 pending</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-kit-medical"></i></div>
+              <div class="summary-info">
+                <span>Safety Protocol</span>
+                <h4>Active</h4>
+                <small class="trend-up"><i class="fa-solid fa-heart-pulse"></i> Certified briefing</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Bars: Checklist Readiness -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-bars-progress text-accent"></i> Expedition Preparation Progress</h3>
+            </div>
+            <div class="progress-meters-grid">
+              <div class="progress-meter-card">
+                <div class="progress-meter-top">
+                  <span>Personal Field Gear</span>
+                  <span>85% Packed</span>
+                </div>
+                <div class="progress-meter-track">
+                  <div class="progress-meter-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="progress-meter-card">
+                <div class="progress-meter-top">
+                  <span>Wilderness Entry Permits</span>
+                  <span>100% Verified</span>
+                </div>
+                <div class="progress-meter-track">
+                  <div class="progress-meter-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+              <div class="progress-meter-card">
+                <div class="progress-meter-top">
+                  <span>Health & Emergency Protocol</span>
+                  <span>90% Complete</span>
+                </div>
+                <div class="progress-meter-track">
+                  <div class="progress-meter-fill" style="width: 90%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checklist Cards Panels Grid -->
+          <div class="checklist-grid" style="margin-top: 24px;">
+            <!-- Category 1 -->
+            <div class="checklist-category-card">
+              <h4 class="category-title"><i class="fa-solid fa-vest text-accent"></i> Required Field Gear</h4>
+              <ul class="checklist-items">
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>Waterproof breathable hiking boots (Broken-in)</span>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>2L BPA-free reusable hydration bladder or flask</span>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>Layered wool or recycled synthetic fleece garments</span>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox">
+                    <span>Rechargeable headlamp with red night-vision mode</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Category 2 -->
+            <div class="checklist-category-card">
+              <h4 class="category-title"><i class="fa-solid fa-leaf text-accent"></i> Eco-Safe Toiletries</h4>
+              <ul class="checklist-items">
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>100% biodegradable camp soap (Campsuds / Dr. Bronner's)</span>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>Mineral reef-safe zinc sunscreen (Non-nano titanium free)</span>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked>
+                    <span>Pack-it-out trowel & certified compostable waste bags</span>
+                  </label>
+                </li>
+                <li class="checklist-item">
+                  <label class="checkbox-label">
+                    <input type="checkbox">
+                    <span>Natural plant-based DEET-free insect repellent</span>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Table: Official Permits & Travel Passes -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-id-card text-accent"></i> Wilderness Entry Passes & Official Permits</h3>
+              <a href="404.html" class="btn btn-outline btn-sm">Download Permit Bundle</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Pass ID</th>
+                    <th>Document Name</th>
+                    <th>Issuing Authority</th>
+                    <th>Valid Through</th>
+                    <th>Verification</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#PM-551</strong></td>
+                    <td>Olympic National Park Wilderness Permit</td>
+                    <td>US National Park Service</td>
+                    <td>Nov 17, 2026</td>
+                    <td><span class="dash-status-badge verified">Verified Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Download PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#PM-402</strong></td>
+                    <td>Indigenous Land Stewardship Pass</td>
+                    <td>Quinault Tribal Nation</td>
+                    <td>Nov 17, 2026</td>
+                    <td><span class="dash-status-badge verified">Verified Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Download PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#PM-319</strong></td>
+                    <td>Wilderness Medical & Evacuation Insurance</td>
+                    <td>Global Nature Shield</td>
+                    <td>Dec 31, 2026</td>
+                    <td><span class="dash-status-badge verified">Verified Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Download PDF</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 6: PROFILE & SETTINGS
+             ================================================================== -->
+        <section id="view-profile-settings" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Traveler Profile & Preferences</h2>
+              <p>Configure personal travel details, dietary needs, and carbon sensitivity options.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-circle-info"></i> Session Preferences</span>
+            </div>
+          </div>
+
+          <!-- 4 Statistics Metrics Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="summary-info">
+                <span>Stewardship Tier</span>
+                <h4>Tier 3</h4>
+                <small class="trend-up"><i class="fa-solid fa-seedling"></i> Pioneer Explorer</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-fire"></i></div>
+              <div class="summary-info">
+                <span>Eco Points</span>
+                <h4>2,450 Pts</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Top 5% Contributor</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-handshake"></i></div>
+              <div class="summary-info">
+                <span>Volunteer Hours</span>
+                <h4>16 Hours</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-hands-holding-child"></i> Community projects</small>
+              </div>
+            </div>
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="summary-info">
+                <span>Member Since</span>
+                <h4>2024</h4>
+                <small class="trend-neutral"><i class="fa-solid fa-clock"></i> 2 Years Active</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Form & Preferences Panel -->
+          <div class="dash-grid-2" style="margin-top: 24px;">
+            <div class="dash-panel">
+              <div class="panel-header">
+                <h3 class="panel-title"><i class="fa-solid fa-user-pen text-accent"></i> Traveler Contact & Dietary Preferences</h3>
+              </div>
+              <form id="userProfileForm">
+                <div class="form-group">
+                  <label for="profileName" class="form-label">Full Legal Name *</label>
+                  <input type="text" id="profileName" class="form-control" value="Sarah Jenkins" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="profileEmail" class="form-label">Contact Email *</label>
+                  <input type="email" id="profileEmail" class="form-control" value="sarah.jenkins@example.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="profileDiet" class="form-label">Dietary & Expedition Nutrition</label>
+                  <select id="profileDiet" class="form-control">
+                    <option value="vegetarian" selected>Vegetarian (Locally Sourced)</option>
+                    <option value="vegan">Vegan / Plant-Based</option>
+                    <option value="gluten-free">Gluten-Sensitive</option>
+                    <option value="omnivore">Local Sustainable Omnivore</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="profileCarbonOption" class="form-label">Carbon Compensation Protocol</label>
+                  <select id="profileCarbonOption" class="form-control">
+                    <option value="100" selected>100% Full Carbon Neutralization (Gold Standard)</option>
+                    <option value="200">200% Climate Positive (Double Sequestration)</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%; margin-top: 10px;">
+                  <i class="fa-solid fa-floppy-disk"></i> Save Profile Preferences
+                </button>
+              </form>
+            </div>
+
+            <!-- Conservation Achievements -->
+            <div class="dash-panel">
+              <div class="panel-header">
+                <h3 class="panel-title"><i class="fa-solid fa-medal text-accent"></i> Unlocked Conservation Badges</h3>
+              </div>
+              <ul style="display: flex; flex-direction: column; gap: 14px; font-size: 0.9rem;">
+                <li style="display: flex; gap: 12px; align-items: center; padding: 10px; background-color: var(--primary-light); border-radius: var(--radius-sm);">
+                  <i class="fa-solid fa-award" style="font-size: 1.4rem; color: var(--accent);"></i>
+                  <div>
+                    <strong>Leave-No-Trace Pioneer</strong>
+                    <div style="font-size: 0.78rem; color: var(--primary-muted);">Zero single-use plastics across 3 wilderness expeditions.</div>
+                  </div>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: center; padding: 10px; background-color: var(--primary-light); border-radius: var(--radius-sm);">
+                  <i class="fa-solid fa-tree" style="font-size: 1.4rem; color: var(--accent);"></i>
+                  <div>
+                    <strong>Canopy Protector</strong>
+                    <div style="font-size: 0.78rem; color: var(--primary-muted);">Funded reforestation of 18 native western hemlocks.</div>
+                  </div>
+                </li>
+                <li style="display: flex; gap: 12px; align-items: center; padding: 10px; background-color: var(--primary-light); border-radius: var(--radius-sm);">
+                  <i class="fa-solid fa-shield-halved" style="font-size: 1.4rem; color: var(--accent);"></i>
+                  <div>
+                    <strong>Wildlife Corridor Steward</strong>
+                    <div style="font-size: 0.78rem; color: var(--primary-muted);">Passed non-invasive animal observation certification.</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Table: Active Login Devices & Security Sessions -->
+          <div class="dash-panel" style="margin-top: 24px;">
+            <div class="panel-header">
+              <h3 class="panel-title"><i class="fa-solid fa-shield-cat text-accent"></i> Active Devices & Security Session Log</h3>
+              <a href="404.html" class="btn btn-outline btn-sm">Revoke Other Sessions</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Device & Browser</th>
+                    <th>Location</th>
+                    <th>IP Address</th>
+                    <th>Last Active</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Chrome on Windows 11</strong></td>
+                    <td>Seattle, WA (Demo)</td>
+                    <td>192.168.1.104</td>
+                    <td>Active Now</td>
+                    <td><span class="dash-status-badge verified">Current Session</span></td>
+                    <td><span style="font-size: 0.8rem; color: var(--primary-muted);">This Device</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Safari on iPhone 15</strong></td>
+                    <td>Portland, OR (Demo)</td>
+                    <td>10.0.0.45</td>
+                    <td>3 Hours Ago</td>
+                    <td><span class="dash-status-badge completed">Standby</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Log Out</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Master JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

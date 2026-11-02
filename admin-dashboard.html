@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Admin Dashboard &mdash; Master management portal for Stackly Eco Tourism Platform.">
+  <title>Admin Dashboard &mdash; Stackly Platform</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Page-Specific Stylesheet -->
+  <link rel="stylesheet" href="css/admin-dashboard.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    <!-- ======================================================================
+         ADMIN SIDEBAR NAVIGATION
+         ====================================================================== -->
+    <aside class="dashboard-sidebar" role="navigation" aria-label="Admin Dashboard Sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="brand-link">
+          <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="brand-logo-img">
+          <span class="brand-text">STACK<span>LY</span></span>
+        </a>
+        <button class="sidebar-close-btn" aria-label="Close sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-label">Admin Management</div>
+        
+        <a href="#overview" class="dash-nav-link active" data-view="overview">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Overview</span>
+        </a>
+
+        <a href="#tours" class="dash-nav-link" data-view="tours">
+          <i class="fa-solid fa-route"></i>
+          <span>Tour Management</span>
+        </a>
+
+        <a href="#bookings" class="dash-nav-link" data-view="bookings">
+          <i class="fa-solid fa-calendar-check"></i>
+          <span>Bookings & Inquiries</span>
+        </a>
+
+        <a href="#guides" class="dash-nav-link" data-view="guides">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Naturalists & Guides</span>
+        </a>
+
+        <a href="#audits" class="dash-nav-link" data-view="audits">
+          <i class="fa-solid fa-leaf"></i>
+          <span>Sustainability Audits</span>
+        </a>
+
+        <a href="#settings" class="dash-nav-link" data-view="settings">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Admin Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="login.html" class="logout-link">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+          <span>Exit / Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Mobile Drawer Backdrop Overlay -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ======================================================================
+         MAIN CONTENT AREA
+         ====================================================================== -->
+    <main class="dashboard-main" role="main">
+      <!-- Dashboard Header -->
+      <header class="dashboard-header">
+        <div class="header-left">
+          <button class="sidebar-toggle-btn" aria-label="Open sidebar menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="header-greeting">
+            <h2>Welcome, <span class="dynamic-user-name">Admin</span></h2>
+            <p>Master management portal for eco-tourism operations and conservation metrics</p>
+          </div>
+        </div>
+
+        <!-- Center Brand (Visible on Mobile Responsive Header) -->
+        <a href="index.html" class="header-mobile-brand" aria-label="Stackly Home">
+          <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="mobile-brand-logo">
+          <span class="mobile-brand-text">STACK<span>LY</span></span>
+        </a>
+
+        <div class="header-right">
+          <div class="demo-date-pill">
+            <i class="fa-solid fa-calendar-day"></i>
+            <span>Oct 29, 2026 (Demo)</span>
+          </div>
+
+          <!-- Notification Bell Button (Visible on Mobile Responsive Header) -->
+          <a href="404.html" class="header-notif-btn" aria-label="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="notif-badge">4</span>
+          </a>
+
+          <!-- Dynamic Profile Section -->
+          <div class="header-user-pill">
+            <div class="header-avatar-initials" id="headerAvatarInitials">AD</div>
+            <div class="header-user-info">
+              <span id="headerUserName" class="dynamic-user-name">System Admin</span>
+              <small id="headerUserEmail" class="dynamic-user-email">admin@stackly.com</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Scrollable Dashboard Content Area -->
+      <div class="dashboard-content-area">
+
+        <!-- ==================================================================
+             VIEW 1: OVERVIEW
+             ================================================================== -->
+        <section id="view-overview" class="dashboard-view active">
+          <!-- Mobile Welcome Section (Matches Example Design) -->
+          <div class="dashboard-welcome-section">
+            <div class="welcome-top-row">
+              <div class="welcome-icon-box">
+                <i class="fa-solid fa-gear"></i>
+              </div>
+              <div class="welcome-text-content">
+                <h2 class="welcome-title">
+                  <span class="welcome-greeting-prefix">GOOD MORNING,</span>
+                  <span class="dynamic-user-name welcome-user-name">RASHEEYARASH</span>
+                </h2>
+                <p class="welcome-subtitle">Here's what's happening with your event platform today.</p>
+              </div>
+            </div>
+
+            <div class="welcome-action-row">
+              <div class="welcome-date-block">
+                <i class="fa-regular fa-calendar"></i>
+                <div class="welcome-date-text">
+                  <div class="welcome-date-main">
+                    <span>Apr</span>
+                    <span>25,</span>
+                    <span>2025</span>
+                  </div>
+                  <span class="welcome-date-day">Friday</span>
+                </div>
+              </div>
+
+              <a href="404.html" class="welcome-cta-btn">
+                <i class="fa-solid fa-plus"></i> Create New Event
+              </a>
+            </div>
+          </div>
+
+          <div class="view-header">
+            <div>
+              <h2>Platform Overview</h2>
+              <p>Master management portal for eco-tourism operations, booking manifests, and conservation metrics.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-circle-info"></i> All data is client-side demonstration only</span>
+            </div>
+          </div>
+
+          <!-- 4 Summary Metric Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-compass"></i></div>
+              <div class="summary-info">
+                <span>Total Bookings</span>
+                <h4>1,428 Trips</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +14% this quarter</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-route"></i></div>
+              <div class="summary-info">
+                <span>Active Low-Impact Tours</span>
+                <h4>24 Expeditions</h4>
+                <small class="trend-neutral">100% capacity managed</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-user-shield"></i></div>
+              <div class="summary-info">
+                <span>Certified Field Guides</span>
+                <h4>38 Biologists</h4>
+                <small class="trend-up"><i class="fa-solid fa-star"></i> 98.6% rating</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-seedling"></i></div>
+              <div class="summary-info">
+                <span>Protected Habitat</span>
+                <h4>12,450 Acres</h4>
+                <small class="trend-up"><i class="fa-solid fa-leaf"></i> Zero-trace audit passed</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart: Platform Reservation Volume & Offsets -->
+          <div class="dash-chart-panel">
+            <div class="dash-chart-header">
+              <div class="dash-chart-title">
+                <i class="fa-solid fa-chart-column text-accent"></i> Platform Expedition Volume & Carbon Offsets (2026)
+              </div>
+              <div class="dash-chart-legend">
+                <span><i class="chart-legend-dot orange"></i> Bookings Confirmed</span>
+                <span><i class="chart-legend-dot charcoal"></i> Carbon Offset (Tons)</span>
+              </div>
+            </div>
+            <div class="chart-bars-container">
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 52%;" title="May: 142 Bookings"></div>
+                  <div class="chart-bar charcoal" style="height: 38%;" title="May: 28 Tons"></div>
+                </div>
+                <span class="chart-label">May</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 68%;" title="Jun: 198 Bookings"></div>
+                  <div class="chart-bar charcoal" style="height: 49%;" title="Jun: 36 Tons"></div>
+                </div>
+                <span class="chart-label">Jun</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 85%;" title="Jul: 245 Bookings"></div>
+                  <div class="chart-bar charcoal" style="height: 64%;" title="Jul: 48 Tons"></div>
+                </div>
+                <span class="chart-label">Jul</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 74%;" title="Aug: 210 Bookings"></div>
+                  <div class="chart-bar charcoal" style="height: 58%;" title="Aug: 42 Tons"></div>
+                </div>
+                <span class="chart-label">Aug</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 92%;" title="Sep: 275 Bookings"></div>
+                  <div class="chart-bar charcoal" style="height: 76%;" title="Sep: 56 Tons"></div>
+                </div>
+                <span class="chart-label">Sep</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 98%;" title="Oct: 298 Bookings"></div>
+                  <div class="chart-bar charcoal" style="height: 84%;" title="Oct: 62 Tons"></div>
+                </div>
+                <span class="chart-label">Oct</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table: Recent Bookings & Manifest Verification -->
+          <div class="dash-table-panel">
+            <div class="dash-table-header">
+              <h3><i class="fa-solid fa-list-check text-accent"></i> Recent Expedition Bookings & Manifest Verification</h3>
+              <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Export CSV</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Ref #</th>
+                    <th>Traveler / Group</th>
+                    <th>Expedition Route</th>
+                    <th>Dates</th>
+                    <th>Party Size</th>
+                    <th>Permit Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#STK-9081</strong></td>
+                    <td>Dr. Arvind Swaminathan</td>
+                    <td>Silent Valley Rainforest Trek</td>
+                    <td>Nov 08 - Nov 14</td>
+                    <td>6 Travelers</td>
+                    <td><span class="dash-status-badge badge-active"><i class="fa-solid fa-check"></i> Permit Verified</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Audit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Details</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#STK-9076</strong></td>
+                    <td>Green Alpine Society</td>
+                    <td>Spiti Alpine Zero-Waste Trail</td>
+                    <td>Nov 18 - Nov 27</td>
+                    <td>10 Travelers</td>
+                    <td><span class="dash-status-badge badge-pending"><i class="fa-solid fa-clock"></i> Forest Clearance</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Audit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Details</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#STK-9064</strong></td>
+                    <td>Elena Rostova & Family</td>
+                    <td>Sundarbans Solar Boat Safari</td>
+                    <td>Dec 02 - Dec 06</td>
+                    <td>4 Travelers</td>
+                    <td><span class="dash-status-badge badge-active"><i class="fa-solid fa-check"></i> Permit Verified</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Audit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Details</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#STK-9051</strong></td>
+                    <td>Pacific Ecological Guild</td>
+                    <td>Western Ghats Canopy Study</td>
+                    <td>Dec 12 - Dec 18</td>
+                    <td>8 Travelers</td>
+                    <td><span class="dash-status-badge badge-completed"><i class="fa-solid fa-circle-check"></i> Fully Closed</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Audit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Details</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Quick Action Controls -->
+          <div class="dash-actions-strip">
+            <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-plus"></i> Create New Tour Itinerary</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-shield-virus"></i> Trigger Ecological Audit</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-file-invoice"></i> Download Financial Report</a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 2: TOUR MANAGEMENT
+             ================================================================== -->
+        <section id="view-tours" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Tour Itinerary Directory</h2>
+              <p>Create, edit, audit, and regulate low-impact nature tours and maximum visitor quotas.</p>
+            </div>
+            <div>
+              <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-plus"></i> Add New Tour Route</a>
+            </div>
+          </div>
+
+          <!-- 4 Tour Metrics -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="summary-info">
+                <span>Active Routes</span>
+                <h4>24 Expeditions</h4>
+                <small class="trend-up"><i class="fa-solid fa-circle-check"></i> Across 6 Biomes</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-users-line"></i></div>
+              <div class="summary-info">
+                <span>Strict Quota Limit</span>
+                <h4>Max 10 / Tour</h4>
+                <small class="trend-neutral">Wildlife protection law</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-certificate"></i></div>
+              <div class="summary-info">
+                <span>Eco-Integrity Score</span>
+                <h4>99.4%</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Top certified</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="summary-info">
+                <span>Resting Biomes</span>
+                <h4>4 Trails Closed</h4>
+                <small class="trend-neutral">Seasonal breeding rest</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress Meter: Biome Health & Capacity -->
+          <div class="dash-chart-panel">
+            <div class="dash-chart-header">
+              <div class="dash-chart-title">
+                <i class="fa-solid fa-chart-pie text-accent"></i> Trail Utilization & Ecological Footprint Index
+              </div>
+              <span class="text-muted"><small>Updated October 2026</small></span>
+            </div>
+            <div class="progress-meters-grid">
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Silent Valley Rainforest</span>
+                  <strong>62% Capacity</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 62%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Spiti Valley Alpine Pass</span>
+                  <strong>48% Capacity</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 48%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Sundarbans Biosphere Safari</span>
+                  <strong>75% Capacity</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 75%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Kaziranga Buffer Zone Walking</span>
+                  <strong>38% Capacity</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 38%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tour Table -->
+          <div class="dash-table-panel">
+            <div class="dash-table-header">
+              <h3><i class="fa-solid fa-route text-accent"></i> Master Tour Directory</h3>
+              <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-filter"></i> Filter Biomes</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Tour Code</th>
+                    <th>Tour Name</th>
+                    <th>Ecosystem / Biome</th>
+                    <th>Duration</th>
+                    <th>Max Cap</th>
+                    <th>Base Price</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#TR-SV01</strong></td>
+                    <td>Silent Valley Rainforest Trek</td>
+                    <td>Tropical Evergreen</td>
+                    <td>7 Days</td>
+                    <td>8 Guests</td>
+                    <td>$1,250</td>
+                    <td><span class="dash-status-badge badge-active">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Edit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Quotas</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#TR-SP04</strong></td>
+                    <td>Spiti Valley High Altitude Alpine</td>
+                    <td>Cold Desert Mountain</td>
+                    <td>10 Days</td>
+                    <td>10 Guests</td>
+                    <td>$1,650</td>
+                    <td><span class="dash-status-badge badge-active">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Edit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Quotas</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#TR-SB02</strong></td>
+                    <td>Sundarbans Solar Mangrove Cruise</td>
+                    <td>Tidal Wetland</td>
+                    <td>5 Days</td>
+                    <td>6 Guests</td>
+                    <td>$890</td>
+                    <td><span class="dash-status-badge badge-active">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Edit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Quotas</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#TR-KZ05</strong></td>
+                    <td>Kaziranga Buffer Habitat Walk</td>
+                    <td>Sub-Himalayan Grassland</td>
+                    <td>4 Days</td>
+                    <td>6 Guests</td>
+                    <td>$750</td>
+                    <td><span class="dash-status-badge badge-pending">Breeding Rest</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Edit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Quotas</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#TR-NG09</strong></td>
+                    <td>Nilgiri Shola Canopy Expedition</td>
+                    <td>Montane Grassland</td>
+                    <td>6 Days</td>
+                    <td>8 Guests</td>
+                    <td>$1,100</td>
+                    <td><span class="dash-status-badge badge-active">Active</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Edit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Quotas</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-actions-strip">
+            <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-download"></i> Export All Itineraries (PDF)</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-arrows-rotate"></i> Sync Forest Department Permits</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-sliders"></i> Adjust Seasonal Quotas</a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 3: BOOKINGS & INQUIRIES
+             ================================================================== -->
+        <section id="view-bookings" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Direct Bookings & Reservations</h2>
+              <p>Audit traveler bookings, manage ranger permits, and ensure dietary and fitness preparedness.</p>
+            </div>
+            <div>
+              <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-file-circle-plus"></i> New Reservation</a>
+            </div>
+          </div>
+
+          <!-- 4 Booking Metric Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div class="summary-info">
+                <span>Confirmed Bookings</span>
+                <h4>842 Trips</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +9% this month</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+              <div class="summary-info">
+                <span>Pending Permits</span>
+                <h4>19 Requests</h4>
+                <small class="trend-neutral">Ranger dispatch queue</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-info">
+                <span>Gross Revenue</span>
+                <h4>$384,200</h4>
+                <small class="trend-up"><i class="fa-solid fa-hand-holding-dollar"></i> 34% local community</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+              <div class="summary-info">
+                <span>Health Clearances</span>
+                <h4>99.1% Ready</h4>
+                <small class="trend-up"><i class="fa-solid fa-kit-medical"></i> Verified leaders</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chart: Bookings by Region -->
+          <div class="dash-chart-panel">
+            <div class="dash-chart-header">
+              <div class="dash-chart-title">
+                <i class="fa-solid fa-chart-column text-accent"></i> Regional Booking Density & Leave-No-Trace Readiness
+              </div>
+              <div class="dash-chart-legend">
+                <span><i class="chart-legend-dot orange"></i> Reserved Capacity</span>
+                <span><i class="chart-legend-dot charcoal"></i> Carbon Offset Tons</span>
+              </div>
+            </div>
+            <div class="chart-bars-container">
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 84%;" title="Western Ghats: 84%"></div>
+                  <div class="chart-bar charcoal" style="height: 60%;" title="Offsets: 48T"></div>
+                </div>
+                <span class="chart-label">W. Ghats</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 72%;" title="Himalayas: 72%"></div>
+                  <div class="chart-bar charcoal" style="height: 52%;" title="Offsets: 38T"></div>
+                </div>
+                <span class="chart-label">Himalayas</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 64%;" title="Sundarbans: 64%"></div>
+                  <div class="chart-bar charcoal" style="height: 44%;" title="Offsets: 30T"></div>
+                </div>
+                <span class="chart-label">Sundarbans</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 54%;" title="Northeast: 54%"></div>
+                  <div class="chart-bar charcoal" style="height: 40%;" title="Offsets: 26T"></div>
+                </div>
+                <span class="chart-label">Northeast</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 90%;" title="Nilgiris: 90%"></div>
+                  <div class="chart-bar charcoal" style="height: 68%;" title="Offsets: 54T"></div>
+                </div>
+                <span class="chart-label">Nilgiris</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bookings Table -->
+          <div class="dash-table-panel">
+            <div class="dash-table-header">
+              <h3><i class="fa-solid fa-list-check text-accent"></i> Active Traveler Bookings</h3>
+              <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Export Roster</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Booking Ref</th>
+                    <th>Lead Guest</th>
+                    <th>Tour Itinerary</th>
+                    <th>Travel Dates</th>
+                    <th>Pax</th>
+                    <th>Permit Readiness</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#BK-7801</strong></td>
+                    <td>Aarav Nair</td>
+                    <td>Silent Valley Rainforest</td>
+                    <td>Nov 10 - Nov 17</td>
+                    <td>2 Guests</td>
+                    <td><span class="dash-status-badge badge-active"><i class="fa-solid fa-check"></i> Permit Issued</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Permit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Manage</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#BK-7794</strong></td>
+                    <td>Sophie Martin</td>
+                    <td>Spiti Alpine Zero-Trace</td>
+                    <td>Nov 22 - Dec 01</td>
+                    <td>4 Guests</td>
+                    <td><span class="dash-status-badge badge-pending"><i class="fa-solid fa-clock"></i> Medical Review</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Permit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Manage</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#BK-7788</strong></td>
+                    <td>Marcus Vance</td>
+                    <td>Sundarbans Solar Boat</td>
+                    <td>Dec 05 - Dec 10</td>
+                    <td>2 Guests</td>
+                    <td><span class="dash-status-badge badge-active"><i class="fa-solid fa-check"></i> Permit Issued</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Permit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Manage</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#BK-7762</strong></td>
+                    <td>Meera Krishnan</td>
+                    <td>Nilgiri Shola Canopy</td>
+                    <td>Dec 15 - Dec 21</td>
+                    <td>3 Guests</td>
+                    <td><span class="dash-status-badge badge-completed"><i class="fa-solid fa-circle-check"></i> Completed</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Permit</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Manage</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-actions-strip">
+            <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-envelope-circle-check"></i> Dispatch Trail Guides</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-receipt"></i> Export Tax & Carbon Invoices</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-user-xmark"></i> Review Cancellation Requests</a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 4: NATURALISTS & GUIDES
+             ================================================================== -->
+        <section id="view-guides" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Field Naturalists & Eco-Guides</h2>
+              <p>Resident wildlife biologists, certified alpine leaders, and community indigenous elders.</p>
+            </div>
+            <div>
+              <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-user-plus"></i> Register Guide</a>
+            </div>
+          </div>
+
+          <!-- 4 Guide Metric Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-person-hiking"></i></div>
+              <div class="summary-info">
+                <span>Active Naturalists</span>
+                <h4>38 Guides</h4>
+                <small class="trend-up"><i class="fa-solid fa-circle-check"></i> 100% Certified</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-kit-medical"></i></div>
+              <div class="summary-info">
+                <span>Wilderness First Aid</span>
+                <h4>38 / 38 Current</h4>
+                <small class="trend-neutral">WFR Recertified annually</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-award"></i></div>
+              <div class="summary-info">
+                <span>Elder Mentors</span>
+                <h4>14 Guardians</h4>
+                <small class="trend-up"><i class="fa-solid fa-heart"></i> Indigenous wisdom</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-star"></i></div>
+              <div class="summary-info">
+                <span>Leader Satisfaction</span>
+                <h4>4.96 / 5.0</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> Over 950 reviews</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guide Specialization Matrix -->
+          <div class="dash-chart-panel">
+            <div class="dash-chart-header">
+              <div class="dash-chart-title">
+                <i class="fa-solid fa-id-badge text-accent"></i> Field Specialization & Accreditation Compliance
+              </div>
+              <span class="text-muted"><small>All Certifications Verified Active</small></span>
+            </div>
+            <div class="progress-meters-grid">
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Wilderness Ethology & Biologist Level</span>
+                  <strong>94% Coverage</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 94%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Alpine Navigation & High-Altitude Rescue</span>
+                  <strong>88% Coverage</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 88%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Leave-No-Trace Master Educator</span>
+                  <strong>100% Mandatory</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+
+              <div class="progress-meter-item">
+                <div class="meter-info">
+                  <span>Ethnobotany & Community Stewardship</span>
+                  <strong>96% Coverage</strong>
+                </div>
+                <div class="meter-bar-track">
+                  <div class="meter-bar-fill" style="width: 96%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Guides Roster Table -->
+          <div class="dash-table-panel">
+            <div class="dash-table-header">
+              <h3><i class="fa-solid fa-user-check text-accent"></i> Guide Roster & Deployment Status</h3>
+              <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-user-gear"></i> Manage Shift Rosters</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Guide Name</th>
+                    <th>Specialization</th>
+                    <th>Accreditation</th>
+                    <th>Expeditions Led</th>
+                    <th>Rating</th>
+                    <th>Current Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Dr. Anand Sen</strong></td>
+                    <td>Ornithology & Canopy Ecology</td>
+                    <td>PhD Ecology, WFR Level 3</td>
+                    <td>142 Trips</td>
+                    <td>5.0 / 5.0</td>
+                    <td><span class="dash-status-badge badge-active">On Expedition</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Profile</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Assign</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Maya Lin</strong></td>
+                    <td>Alpine Ice & High Pass Safety</td>
+                    <td>UIAGM / IMF Certified</td>
+                    <td>89 Trips</td>
+                    <td>4.9 / 5.0</td>
+                    <td><span class="dash-status-badge badge-active">Available</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Profile</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Assign</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Rajeshwari Raman</strong></td>
+                    <td>Ethnobotany & Shola Flora</td>
+                    <td>Elder Council Mentor</td>
+                    <td>210 Trips</td>
+                    <td>5.0 / 5.0</td>
+                    <td><span class="dash-status-badge badge-active">Available</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Profile</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Assign</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Kabir Das</strong></td>
+                    <td>Estuarine Wetland & Kayaking</td>
+                    <td>Coastal Life Support</td>
+                    <td>76 Trips</td>
+                    <td>4.8 / 5.0</td>
+                    <td><span class="dash-status-badge badge-pending">Training Leave</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Profile</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Assign</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-actions-strip">
+            <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-certificate"></i> Audit Guide Credentials</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-graduation-cap"></i> Schedule Leave-No-Trace Workshop</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-file-contract"></i> Download Insurance Coverage</a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 5: SUSTAINABILITY AUDITS
+             ================================================================== -->
+        <section id="view-audits" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Ecological Integrity & Audits</h2>
+              <p>Transparent ledger of carbon offsetting, zero-waste compliance, and local revenue sharing.</p>
+            </div>
+            <div>
+              <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-file-shield"></i> Run Spot Audit</a>
+            </div>
+          </div>
+
+          <!-- 4 Audit Metric Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-tree"></i></div>
+              <div class="summary-info">
+                <span>Habitat Protected</span>
+                <h4>12,450 Acres</h4>
+                <small class="trend-up"><i class="fa-solid fa-arrow-trend-up"></i> +1,200 acres 2026</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-smog"></i></div>
+              <div class="summary-info">
+                <span>Verified Offset</span>
+                <h4>100% Net Zero</h4>
+                <small class="trend-up"><i class="fa-solid fa-check-double"></i> Gold Standard certified</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+              <div class="summary-info">
+                <span>Local Community Share</span>
+                <h4>34.2% Revenue</h4>
+                <small class="trend-up"><i class="fa-solid fa-people-roof"></i> Direct village funds</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-recycle"></i></div>
+              <div class="summary-info">
+                <span>Plastic Diverted</span>
+                <h4>2.8 Tons</h4>
+                <small class="trend-neutral">100% zero single-use</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual Bar Chart: Sanctuary Ecological Ratings -->
+          <div class="dash-chart-panel">
+            <div class="dash-chart-header">
+              <div class="dash-chart-title">
+                <i class="fa-solid fa-leaf text-accent"></i> Sanctuary Conservation & Carbon Neutrality Ledger (2026)
+              </div>
+              <div class="dash-chart-legend">
+                <span><i class="chart-legend-dot orange"></i> Compliance Score (%)</span>
+                <span><i class="chart-legend-dot charcoal"></i> Carbon Avoided (Tons)</span>
+              </div>
+            </div>
+            <div class="chart-bars-container">
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 98%;" title="Nilgiri Biosphere: 98%"></div>
+                  <div class="chart-bar charcoal" style="height: 82%;" title="Carbon Avoided: 42T"></div>
+                </div>
+                <span class="chart-label">Nilgiri</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 94%;" title="Sundarbans Delta: 94%"></div>
+                  <div class="chart-bar charcoal" style="height: 70%;" title="Carbon Avoided: 35T"></div>
+                </div>
+                <span class="chart-label">Sundarbans</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 100%;" title="Silent Valley: 100%"></div>
+                  <div class="chart-bar charcoal" style="height: 90%;" title="Carbon Avoided: 52T"></div>
+                </div>
+                <span class="chart-label">Silent Valley</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 92%;" title="Spiti High Pass: 92%"></div>
+                  <div class="chart-bar charcoal" style="height: 64%;" title="Carbon Avoided: 28T"></div>
+                </div>
+                <span class="chart-label">Spiti</span>
+              </div>
+              <div class="chart-col">
+                <div class="chart-bars-group">
+                  <div class="chart-bar orange" style="height: 96%;" title="Kaziranga Buffer: 96%"></div>
+                  <div class="chart-bar charcoal" style="height: 78%;" title="Carbon Avoided: 38T"></div>
+                </div>
+                <span class="chart-label">Kaziranga</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Audits Ledger Table -->
+          <div class="dash-table-panel">
+            <div class="dash-table-header">
+              <h3><i class="fa-solid fa-clipboard-check text-accent"></i> Verified Field Audit Ledger</h3>
+              <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Download Full Ledger</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Audit ID</th>
+                    <th>Sanctuary Zone</th>
+                    <th>Inspection Date</th>
+                    <th>Lead Inspector</th>
+                    <th>Compliance Score</th>
+                    <th>Certifier</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#AUD-2026-088</strong></td>
+                    <td>Silent Valley Wilderness Zone</td>
+                    <td>Oct 15, 2026</td>
+                    <td>Dr. Arvind Swaminathan</td>
+                    <td><strong>99.8%</strong></td>
+                    <td><span class="dash-status-badge badge-active">Gold Standard</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Scorecard</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Certificate</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#AUD-2026-074</strong></td>
+                    <td>Sundarbans Tidal Reserve</td>
+                    <td>Sep 28, 2026</td>
+                    <td>Wildlife Trust India</td>
+                    <td><strong>96.4%</strong></td>
+                    <td><span class="dash-status-badge badge-active">Verified</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Scorecard</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Certificate</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#AUD-2026-061</strong></td>
+                    <td>Spiti Alpine Zero-Waste Area</td>
+                    <td>Aug 19, 2026</td>
+                    <td>Himalayan Clean League</td>
+                    <td><strong>98.1%</strong></td>
+                    <td><span class="dash-status-badge badge-active">Zero-Trace A+</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Scorecard</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Certificate</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>#AUD-2026-049</strong></td>
+                    <td>Nilgiri Shola Micro-Sanctuary</td>
+                    <td>Jul 12, 2026</td>
+                    <td>State Biodiversity Board</td>
+                    <td><strong>97.5%</strong></td>
+                    <td><span class="dash-status-badge badge-completed">Archived</span></td>
+                    <td>
+                      <div class="table-actions">
+                        <a href="404.html" class="btn btn-sm btn-outline">Scorecard</a>
+                        <a href="404.html" class="btn btn-sm btn-accent">Certificate</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-actions-strip">
+            <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-file-arrow-down"></i> Download Annual Sustainability Report</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-stamp"></i> Re-issue Carbon Offset Token</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-hand-holding-hand"></i> Village Benefit Transparency Ledger</a>
+          </div>
+        </section>
+
+        <!-- ==================================================================
+             VIEW 6: ADMIN SETTINGS
+             ================================================================== -->
+        <section id="view-settings" class="dashboard-view">
+          <div class="view-header">
+            <div>
+              <h2>Admin Profile & System Settings</h2>
+              <p>Configure administrative credentials, portal notifications, and security protocols.</p>
+            </div>
+            <div>
+              <span class="badge-sample"><i class="fa-solid fa-shield-halved"></i> Role: Head System Administrator</span>
+            </div>
+          </div>
+
+          <!-- 4 Settings & Security Metric Cards -->
+          <div class="summary-cards-grid">
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-lock"></i></div>
+              <div class="summary-info">
+                <span>Security Posture</span>
+                <h4>Enterprise A+</h4>
+                <small class="trend-up"><i class="fa-solid fa-shield-check"></i> TLS 1.3 Strict</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-user-gear"></i></div>
+              <div class="summary-info">
+                <span>Active Admins</span>
+                <h4>3 Authorized</h4>
+                <small class="trend-neutral">Audit logging enabled</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-satellite-dish"></i></div>
+              <div class="summary-info">
+                <span>Emergency Beacon</span>
+                <h4>Operational</h4>
+                <small class="trend-up"><i class="fa-solid fa-circle-check"></i> Ranger GPS hooked</small>
+              </div>
+            </div>
+
+            <div class="summary-card">
+              <div class="summary-icon"><i class="fa-solid fa-server"></i></div>
+              <div class="summary-info">
+                <span>Platform Version</span>
+                <h4>v2.4.0 (Live)</h4>
+                <small class="trend-up"><i class="fa-solid fa-check"></i> Demonstration Build</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings Grid: Profile & Security Controls -->
+          <div class="settings-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; margin-bottom: 24px;">
+            <!-- Profile Card -->
+            <div class="dash-table-panel" style="padding: 24px;">
+              <h3 style="margin-bottom: 16px; font-size: 1.1rem; color: #111111;"><i class="fa-solid fa-user-shield text-accent"></i> Admin Master Profile</h3>
+              <form id="adminSettingsForm" class="dashboard-form" onsubmit="return false;">
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label class="form-label" style="font-weight: 600; font-size: 0.85rem;">Administrator Name</label>
+                  <input type="text" id="adminSettingsName" class="form-control" value="System Admin" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label class="form-label" style="font-weight: 600; font-size: 0.85rem;">Admin Email</label>
+                  <input type="email" id="adminSettingsEmail" class="form-control" value="admin@stackly.com" required>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 16px;">
+                  <label class="form-label" style="font-weight: 600; font-size: 0.85rem;">Operational Headquarters</label>
+                  <input type="text" class="form-control" value="MMR Complex, Chinna Thirupathi, Salem, TN 636008" readonly style="opacity: 0.8;">
+                </div>
+
+                <button type="submit" class="btn btn-accent" style="width: 100%;">
+                  <i class="fa-solid fa-floppy-disk"></i> Save Admin Profile
+                </button>
+              </form>
+            </div>
+
+            <!-- Security & Alert Configurations -->
+            <div class="dash-table-panel" style="padding: 24px;">
+              <h3 style="margin-bottom: 16px; font-size: 1.1rem; color: #111111;"><i class="fa-solid fa-tower-broadcast text-accent"></i> Security & Dispatch Alerts</h3>
+              <div class="preference-list">
+                <div style="padding: 12px 0; border-bottom: 1px solid #eeeeee; display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong style="display: block; font-size: 0.9rem;">Ranger Emergency SOS Webhook</strong>
+                    <small style="color: #666666;">Auto-dispatch nearest field ranger on beacon ping</small>
+                  </div>
+                  <span class="dash-status-badge badge-active">Enabled</span>
+                </div>
+
+                <div style="padding: 12px 0; border-bottom: 1px solid #eeeeee; display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong style="display: block; font-size: 0.9rem;">Visitor Quota Breach Warnings</strong>
+                    <small style="color: #666666;">Notify state forest department on threshold</small>
+                  </div>
+                  <span class="dash-status-badge badge-active">Enabled</span>
+                </div>
+
+                <div style="padding: 12px 0; display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <strong style="display: block; font-size: 0.9rem;">Daily Carbon Ledger Backup</strong>
+                    <small style="color: #666666;">Automated cryptographic hash of offsets</small>
+                  </div>
+                  <span class="dash-status-badge badge-active">Active</span>
+                </div>
+              </div>
+
+              <div style="margin-top: 24px;">
+                <a href="404.html" class="btn btn-outline" style="width: 100%;"><i class="fa-solid fa-key"></i> Rotate Admin Encryption Keys</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Table: Admin Activity Audit Trail -->
+          <div class="dash-table-panel">
+            <div class="dash-table-header">
+              <h3><i class="fa-solid fa-clock-rotate-left text-accent"></i> Recent Administrative Action Logs</h3>
+              <a href="404.html" class="btn btn-sm btn-outline"><i class="fa-solid fa-download"></i> Export Logs</a>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Timestamp</th>
+                    <th>Admin User</th>
+                    <th>Action Executed</th>
+                    <th>Target Zone / Ref</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Today, 10:14 AM</td>
+                    <td>admin@stackly.com</td>
+                    <td>Permit Approved (#STK-9081)</td>
+                    <td>Silent Valley Rainforest</td>
+                    <td><span class="dash-status-badge badge-active">Success</span></td>
+                    <td><a href="404.html" class="btn btn-sm btn-outline">Log</a></td>
+                  </tr>
+                  <tr>
+                    <td>Yesterday, 04:32 PM</td>
+                    <td>admin@stackly.com</td>
+                    <td>Quota Modified (TR-SP04)</td>
+                    <td>Spiti Alpine Pass</td>
+                    <td><span class="dash-status-badge badge-active">Success</span></td>
+                    <td><a href="404.html" class="btn btn-sm btn-outline">Log</a></td>
+                  </tr>
+                  <tr>
+                    <td>Oct 28, 11:20 AM</td>
+                    <td>admin@stackly.com</td>
+                    <td>Guide Recertified (Dr. Sen)</td>
+                    <td>Field Biologist Registry</td>
+                    <td><span class="dash-status-badge badge-completed">Archived</span></td>
+                    <td><a href="404.html" class="btn btn-sm btn-outline">Log</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="dash-actions-strip">
+            <a href="404.html" class="btn btn-accent"><i class="fa-solid fa-floppy-disk"></i> Apply Global Changes</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-database"></i> Purge Temporary Cache</a>
+            <a href="404.html" class="btn btn-outline"><i class="fa-solid fa-triangle-exclamation"></i> Maintenance Mode</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Master JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>

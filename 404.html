@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="404 Page Not Found - Stackly Eco Tourism Platform">
+  <title>404 - Expedition Route Not Found | Stackly</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Page-Specific Stylesheet -->
+  <link rel="stylesheet" href="css/404.css">
+</head>
+<body>
+
+  <!-- 404 Main Container -->
+  <main class="error-wrapper" role="main">
+    <div class="container error-container">
+      <div class="error-content">
+        <!-- Brand Logo Header -->
+        <div class="error-brand">
+          <a href="index.html" class="brand-link" aria-label="Stackly Home">
+            <img src="assets/Brand-logo.webp" alt="Stackly Logo" class="brand-logo-img">
+            <span class="brand-text">STACK<span>LY</span></span>
+          </a>
+        </div>
+        <div class="error-badge">
+          <i class="fa-solid fa-compass-drafting"></i>
+          <span>Off the Marked Trail</span>
+        </div>
+
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Expedition Route Not Found</h2>
+        <p class="error-desc">
+          The destination, booking module, or action you requested is currently under conservation maintenance or is part of an upcoming release. Our trail guides are charting new paths.
+        </p>
+
+        <div class="error-actions">
+          <a href="index.html" class="btn btn-accent btn-lg">
+            <i class="fa-solid fa-house"></i> Return to Home
+          </a>
+          <a href="javascript:void(0)" class="btn btn-outline-white btn-lg" onclick="if(window.history.length > 1){window.history.back();}else{window.location.href='index.html';}" aria-label="Go Back to Previous Page">
+            <i class="fa-solid fa-arrow-left"></i> Go Back
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Master JavaScript File -->
+  <script src="js/script.js"></script>
+</body>
+</html>
