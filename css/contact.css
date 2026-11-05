@@ -816,17 +816,20 @@ a.btn:active {
 .contact-newsletter-form .newsletter-input-group {
   display: flex;
   position: relative;
+  width: 100%;
 }
 
 .contact-newsletter-form .newsletter-input {
   width: 100%;
-  padding: 14px 20px;
+  padding: 14px 130px 14px 24px;
   border-radius: var(--radius-full);
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.08);
   color: var(--secondary);
   font-size: 0.95rem;
   outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
 }
 
 .contact-newsletter-form .newsletter-input:focus {
@@ -841,9 +844,29 @@ a.btn:active {
   bottom: 5px;
   padding: 0 24px;
   background-color: var(--accent);
-  color: var(--primary-deep);
+  color: #FFFFFF;
+  border: none;
   border-radius: var(--radius-full);
   font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.contact-newsletter-form .newsletter-btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.contact-newsletter-form .newsletter-feedback {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
 }
 
 /* 8. Final CTA */

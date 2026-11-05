@@ -158,23 +158,6 @@
         </p>
       </div>
 
-      <!-- Search & Category Filter Toolbar -->
-      <div class="blog-toolbar reveal">
-        <div class="blog-search-wrapper">
-          <i class="fa-solid fa-magnifying-glass blog-search-icon"></i>
-          <input type="text" id="blogSearchInput" class="blog-search-input" placeholder="Search by title, topic, or keyword (e.g. packing, wildlife, reef)..." aria-label="Search articles">
-        </div>
-
-        <div class="blog-filters-row">
-          <button class="blog-filter-btn active" data-category="all">All Articles</button>
-          <button class="blog-filter-btn" data-category="sustainability">Sustainable Tips</button>
-          <button class="blog-filter-btn" data-category="wildlife">Wildlife & Nature</button>
-          <button class="blog-filter-btn" data-category="destinations">Destination Guides</button>
-          <button class="blog-filter-btn" data-category="accommodation">Eco Accommodation</button>
-          <button class="blog-filter-btn" data-category="culture">Culture & Community</button>
-        </div>
-      </div>
-
       <!-- Blog Cards Grid -->
       <div class="blog-posts-grid">
         <!-- Article 1 (Section 3: Sustainable Travel Tips) -->
@@ -279,7 +262,61 @@
             <p class="blog-excerpt">
               The profound depth that comes when indigenous stewards guide visitors through their own generational territories and heritage lore.
             </p>
-            <button class="blog-read-btn" data-blog-modal="slow-travel">
+            <button class="blog-read-btn" data-blog-modal="community">
+              Read Story <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 7 (Forest Canopies & Old-Growth Ecology) -->
+        <article class="blog-card-item reveal" data-category="wildlife">
+          <div class="blog-card-media">
+            <img src="assets/images/dest-forest.webp" alt="Old-growth forest canopy walkways" class="blog-card-img" loading="lazy">
+            <span class="blog-category-badge">Wildlife & Nature</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-date"><i class="fa-solid fa-calendar"></i> Oct 02, 2026</div>
+            <h3 class="blog-title">Canopy Walkways: Experiencing Ancient Forests Above the Rootline</h3>
+            <p class="blog-excerpt">
+              How suspended rope bridges and elevated boardwalks enable multi-tier biodiversity research while preserving fragile moss beds below.
+            </p>
+            <button class="blog-read-btn" data-blog-modal="canopy">
+              Read Story <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 8 (Clean Energy Backcountry Sanctuaries) -->
+        <article class="blog-card-item reveal" data-category="accommodation">
+          <div class="blog-card-media">
+            <img src="assets/images/blog-sustainable.webp" alt="Clean energy solar eco-lodges" class="blog-card-img" loading="lazy">
+            <span class="blog-category-badge">Eco Accommodation</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-date"><i class="fa-solid fa-calendar"></i> Sep 20, 2026</div>
+            <h3 class="blog-title">Solar & Micro-Hydro: Inside Clean Energy Off-Grid Sanctuaries</h3>
+            <p class="blog-excerpt">
+              Analyzing cutting-edge lithium iron phosphate storage and run-of-river hydro generation that power modern eco-lodges with zero emissions.
+            </p>
+            <button class="blog-read-btn" data-blog-modal="clean_energy">
+              Read Story <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- Article 9 (Alpine Watersheds & River Corridors) -->
+        <article class="blog-card-item reveal" data-category="destinations">
+          <div class="blog-card-media">
+            <img src="assets/images/dest-waterfall.webp" alt="Pristine alpine river and waterfall conservation" class="blog-card-img" loading="lazy">
+            <span class="blog-category-badge">Destination Guides</span>
+          </div>
+          <div class="blog-card-body">
+            <div class="blog-date"><i class="fa-solid fa-calendar"></i> Sep 05, 2026</div>
+            <h3 class="blog-title">Alpine Waters: Preserving Glacial Runoff & River Habitats</h3>
+            <p class="blog-excerpt">
+              Navigating whitewater corridors and pristine waterfalls with zero microplastic contamination, non-toxic gear cleaning, and strict riverside leave-no-trace protocols.
+            </p>
+            <button class="blog-read-btn" data-blog-modal="watersheds">
               Read Story <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
@@ -290,6 +327,163 @@
           <i class="fa-solid fa-magnifying-glass"></i>
           <h4>No matching articles found</h4>
           <p>Try searching for broader keywords like "packing", "wildlife", or "destinations".</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SECTION 8: FIELD GUIDES & ETHICAL TRAVEL PROTOCOLS
+       ========================================================================== -->
+  <section class="section" id="field-guides" aria-label="Field Guide Series">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag accent-tag">
+          <i class="fa-solid fa-compass"></i> Field Protocols
+        </span>
+        <h2 class="section-title">Essential Field Guides & Wilderness Ethics</h2>
+        <p class="section-subtitle">
+          Core principles designed by conservation naturalists and field guides to prepare travelers for respectful, low-impact nature immersion.
+        </p>
+      </div>
+
+      <!-- 4 Core Field Protocol Cards -->
+      <div class="field-guides-grid">
+        <div class="field-guide-card reveal">
+          <div class="field-guide-icon">
+            <i class="fa-solid fa-shoe-prints"></i>
+          </div>
+          <span class="field-guide-badge">Core Standard</span>
+          <h3 class="field-guide-title">Leave No Trace 7 Principles</h3>
+          <p class="field-guide-desc">
+            Universal backcountry stewardship protocols designed to protect soil crusts, fragile alpine flora, and wildlife habitats.
+          </p>
+          <ul class="field-guide-points">
+            <li><i class="fa-solid fa-circle-check"></i> Travel & camp on durable surfaces</li>
+            <li><i class="fa-solid fa-circle-check"></i> Pack out all trash, waste & food scraps</li>
+            <li><i class="fa-solid fa-circle-check"></i> Leave rocks, plants & artifacts untouched</li>
+          </ul>
+        </div>
+
+        <div class="field-guide-card reveal">
+          <div class="field-guide-icon">
+            <i class="fa-solid fa-binoculars"></i>
+          </div>
+          <span class="field-guide-badge">Ethical Protocol</span>
+          <h3 class="field-guide-title">Wildlife Proximity Matrix</h3>
+          <p class="field-guide-desc">
+            Visual distance guidelines to prevent animal stress, flight-response triggers, and dangerous human habituation in the wild.
+          </p>
+          <ul class="field-guide-points">
+            <li><i class="fa-solid fa-circle-check"></i> 100+ yards from large carnivores</li>
+            <li><i class="fa-solid fa-circle-check"></i> 25+ yards from nesting birds & ungulates</li>
+            <li><i class="fa-solid fa-circle-check"></i> Zero flash photography or call-lures</li>
+          </ul>
+        </div>
+
+        <div class="field-guide-card reveal">
+          <div class="field-guide-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          </div>
+          <span class="field-guide-badge">Cultural Respect</span>
+          <h3 class="field-guide-title">Indigenous Land Etiquette</h3>
+          <p class="field-guide-desc">
+            Honoring generational stewardship traditions, customary tenure protocols, and sacred natural sites across ancestral territories.
+          </p>
+          <ul class="field-guide-points">
+            <li><i class="fa-solid fa-circle-check"></i> Request permission before taking portraits</li>
+            <li><i class="fa-solid fa-circle-check"></i> Respect seasonal taboo & resting zones</li>
+            <li><i class="fa-solid fa-circle-check"></i> Support elder-led interpretive walks</li>
+          </ul>
+        </div>
+
+        <div class="field-guide-card reveal">
+          <div class="field-guide-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <span class="field-guide-badge">Watershed Care</span>
+          <h3 class="field-guide-title">Aquatic & Stream Defense</h3>
+          <p class="field-guide-desc">
+            Safeguarding potable mountain streams, glacial springs, and coral reefs against sunscreen toxins and microplastics.
+          </p>
+          <ul class="field-guide-points">
+            <li><i class="fa-solid fa-circle-check"></i> 200-foot campsite setback from water</li>
+            <li><i class="fa-solid fa-circle-check"></i> Mineral zinc non-nano sunscreen only</li>
+            <li><i class="fa-solid fa-circle-check"></i> UV filtration over disposable bottles</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Curated Reading Collections -->
+      <div class="curated-reading-section reveal">
+        <div class="section-header" style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">Curated Seasonal Reading Tracks</h3>
+          <p style="color: var(--primary-muted); font-size: 0.95rem;">Hand-selected reading lists organized by travel preference and skill tier.</p>
+        </div>
+
+        <div class="curated-reading-grid">
+          <div class="reading-list-card">
+            <div class="reading-list-header">
+              <div class="reading-list-icon"><i class="fa-solid fa-seedling"></i></div>
+              <h4 class="reading-list-title">Beginner Nature Travelers</h4>
+            </div>
+            <div class="reading-list-items">
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="packing">Zero-Waste Day Packs: Lightweight Essentials</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 4 min read &bull; Sustainable Tips</span>
+              </div>
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="ecolodge">How to Spot Genuine Eco-Labels vs Greenwash</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 6 min read &bull; Eco Lodges</span>
+              </div>
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="wildlife">First-Time Safari Etiquette: Silent Observation</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 5 min read &bull; Wildlife</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reading-list-card">
+            <div class="reading-list-header">
+              <div class="reading-list-icon"><i class="fa-solid fa-mountain"></i></div>
+              <h4 class="reading-list-title">Wilderness Expeditionists</h4>
+            </div>
+            <div class="reading-list-items">
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="mountains">Alpine Tundra Lichen Protection Protocols</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 7 min read &bull; Destinations</span>
+              </div>
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="canopy">Canopy Science: Rope Bridge Architecture</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 6 min read &bull; Conservation</span>
+              </div>
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="watersheds">Backcountry Cold-Water Stream Sanitation</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 5 min read &bull; Watersheds</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reading-list-card">
+            <div class="reading-list-header">
+              <div class="reading-list-icon"><i class="fa-solid fa-users"></i></div>
+              <h4 class="reading-list-title">Community & Cultural Stewards</h4>
+            </div>
+            <div class="reading-list-items">
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="slow-travel">The True Cost of Fast Tourism on Villages</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 8 min read &bull; Slow Travel</span>
+              </div>
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="clean_energy">Village Micro-Grids: Decentralized Clean Power</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 6 min read &bull; Clean Energy</span>
+              </div>
+              <div class="reading-item">
+                <span class="reading-item-title" data-blog-modal="community">Oral History Recording with Tribal Consent</span>
+                <span class="reading-item-meta"><i class="fa-solid fa-clock"></i> 5 min read &bull; Culture</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

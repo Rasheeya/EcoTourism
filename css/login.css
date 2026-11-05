@@ -113,12 +113,34 @@ a:hover {
   margin-bottom: 16px;
 }
 
+.auth-brand-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
 .auth-brand-logo {
   height: 38px;
   width: auto;
   object-fit: contain;
-  margin: 0 auto 8px;
+  margin: 0;
   display: block;
+}
+
+.auth-brand-text {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+  font-family: var(--font-family);
+  line-height: 1;
+}
+
+.auth-brand-text span {
+  color: var(--accent);
 }
 
 .auth-title {

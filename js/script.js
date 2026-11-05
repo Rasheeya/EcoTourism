@@ -319,16 +319,17 @@
     document.querySelectorAll('.modal-close, [data-modal-close]').forEach(closeBtn => {
       closeBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const modal = closeBtn.closest('.eco-modal');
+        const modal = closeBtn.closest('.eco-modal, .modal');
         if (modal) closeModal(modal.id);
       });
     });
 
     // Click outside backdrop
-    document.querySelectorAll('.eco-modal').forEach(modal => {
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-          closeModal(modal.id);
+    document.querySelectorAll('.eco-modal, .modal-backdrop').forEach(backdropEl => {
+      backdropEl.addEventListener('click', (e) => {
+        if (e.target === backdropEl) {
+          const activeModal = document.querySelector('.eco-modal.active, .modal.active');
+          if (activeModal) closeModal(activeModal.id);
         }
       });
     });
@@ -336,7 +337,7 @@
     // Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        const activeModal = document.querySelector('.eco-modal.active');
+        const activeModal = document.querySelector('.eco-modal.active, .modal.active');
         if (activeModal) closeModal(activeModal.id);
       }
     });
@@ -347,6 +348,8 @@
     if (!modal) return;
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) backdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
 
     // Focus first interactive element
@@ -359,6 +362,8 @@
     if (!modal) return;
     modal.classList.remove('active');
     modal.setAttribute('aria-hidden', 'true');
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) backdrop.classList.remove('active');
     document.body.style.overflow = '';
   };
 
@@ -879,13 +884,13 @@
     // Article Preview Modal
     const articleData = {
       'featured': {
-        title: 'The Future of Low-Impact Exploration: A Blueprint for 2027',
+        title: 'The Art of Slow Travel: Immersing Without Impacting',
         category: 'Sustainable Travel Tips',
-        readTime: '7 min read',
-        date: 'Oct 24, 2026',
+        readTime: '6 min read',
+        date: 'Oct 15, 2026',
         img: 'assets/images/blog-featured.webp',
         content: `
-          <p>As the global appetite for authentic nature travel continues to expand, maintaining the delicate equilibrium between wilderness access and habitat preservation has emerged as the defining ecological challenge of our era.</p>
+          <p>In modern tourism, the rush to collect passport stamps often overshadows presence. Slow travel invites us to invert this: staying longer in fewer valleys, reducing transit carbon, and directly sustaining family-run economies.</p>
           <h4>1. Embracing Regenerative Stays</h4>
           <p>Traditional travel simply aimed to "leave no trace." Today's leading eco-lodges take the practice one crucial step further: regenerative design. These operations run entirely on micro-hydro or off-grid solar, produce zero single-use plastics, and channel a direct percentage of nightly stays directly into native tree reforestation corridors.</p>
           <h4>2. Decarbonizing Your Journey</h4>
@@ -894,103 +899,194 @@
           <p>The most resilient conservation models are led by local and indigenous communities whose ancestral land management safeguards these biomes. By hiring local guides and patronizing locally owned dining establishments, travelers ensure their spending stays where it matters most.</p>
         `
       },
-      'sustainable': {
-        title: 'How to Travel More Sustainably: 8 Practical Habits',
+      'slow-travel': {
+        title: 'The Art of Slow Travel: Immersing Without Impacting',
         category: 'Sustainable Travel Tips',
-        readTime: '5 min read',
-        date: 'Oct 18, 2026',
-        img: 'assets/images/blog-sustainable.webp',
-        content: `
-          <p>Transforming into a responsible traveler doesn't require extreme sacrifices—it simply demands mindfulness, preparation, and respect for destination biomes.</p>
-          <h4>1. Carry a Quality Refillable Filtration Bottle</h4>
-          <p>Eliminate dozens of single-use disposable water bottles by carrying a lightweight bottle with built-in UV or hollow-fiber filtration.</p>
-          <h4>2. Walk the Middle of Marked Trails</h4>
-          <p>Cutting switchbacks or stepping around puddles widens trail scars, accelerating soil erosion and destroying fragile alpine flora that took decades to establish.</p>
-          <h4>3. Reusable Dining Kits</h4>
-          <p>Bring along a compact bamboo utensil set and collapsible stainless steel food container for trail lunches and market treats.</p>
-        `
-      },
-      'wildlife': {
-        title: "A Beginner's Guide to Responsible Wildlife Tourism",
-        category: 'Wildlife and Nature',
         readTime: '6 min read',
-        date: 'Oct 12, 2026',
-        img: 'assets/images/blog-wildlife.webp',
+        date: 'Oct 15, 2026',
+        img: 'assets/images/blog-featured.webp',
         content: `
-          <p>Encountering animals in their native habitats is among the most profound joys of exploration. Yet improper tourist conduct can alter natural foraging behaviors, induce stress, and trigger dangerous habituation.</p>
-          <h4>Rule 1: Maintain the 25-Meter Perimeter</h4>
-          <p>If an animal alters its behavior, looks up attentively, or pauses feeding because of your presence, you are too close. Back away slowly and quietly.</p>
-          <h4>Rule 2: Never Touch, Feed, or Call Wildlife</h4>
-          <p>Feeding wild animals disrupts natural nutrition, makes them aggressive toward humans, and often leads to animals being euthanized by wildlife authorities.</p>
-          <h4>Rule 3: Skip Flash Photography</h4>
-          <p>Flash bursts disorient nocturnal species and frighten roosting birds. Rely on high-ISO sensors and telephoto optics from safe distances.</p>
-        `
-      },
-      'ecolodge': {
-        title: 'Choosing an Eco-Friendly Place to Stay: What Really Matters',
-        category: 'Eco-Friendly Accommodation',
-        readTime: '6 min read',
-        date: 'Sep 29, 2026',
-        img: 'assets/images/blog-ecolodge.webp',
-        content: `
-          <p>In an age where terms like "eco", "green", and "sustainable" are frequently used for marketing, how can conscientious travelers discern genuine eco-lodges from mere greenwashing?</p>
-          <h4>1. Ask About Energy Generation</h4>
-          <p>Does the facility generate renewable energy on site, or are they relying on diesel generators behind the compound wall?</p>
-          <h4>2. Greywater and Sewage Management</h4>
-          <p>Pristine destinations are ruined when untreated waste enters local aquifers. Look for reed-bed filtration, bio-digesters, or closed-loop greywater irrigation systems.</p>
-          <h4>3. Fair Local Employment</h4>
-          <p>True sustainability encompasses human welfare. Ensure the lodge pays living wages, provides safe conditions, and employs local residents in managerial positions.</p>
+          <p>In modern tourism, the rush to collect passport stamps often overshadows presence. Slow travel invites us to invert this: staying longer in fewer valleys, reducing transit carbon, and directly sustaining family-run economies.</p>
+          <h4>1. Deep Localization Over Rushed Sightseeing</h4>
+          <p>When you stay in a single village or watershed for a week instead of hopping cities every 48 hours, transit emissions drop dramatically, and you form authentic relationships with local hosts and resident naturalists.</p>
+          <h4>2. Walking & Non-Motorized Transit</h4>
+          <p>Explore side valleys on foot, by pack trail, or on rental bicycles. You experience sounds, scents, and ecological transitions that are completely invisible from vehicle windows.</p>
         `
       },
       'packing': {
-        title: 'The Low-Impact Packing Checklist for Nature Adventures',
+        title: "Zero-Waste Packing: The Minimalist Hiker's Manifesto",
         category: 'Sustainable Travel Tips',
         readTime: '4 min read',
-        date: 'Sep 15, 2026',
+        date: 'Oct 08, 2026',
         img: 'assets/images/blog-packing.webp',
         content: `
           <p>Every ounce you pack adds to the fuel consumption of your journey. Packing thoughtfully also ensures you don't inadvertently introduce microplastics or harmful chemicals into fragile ecosystems.</p>
-          <h4>Essentials:</h4>
+          <h4>Backcountry Packing Essentials:</h4>
           <ul>
-            <li>Mineral-based reef-safe sunscreen (non-nano zinc oxide)</li>
-            <li>Concentrated biodegradable, unscented camp soap</li>
-            <li>Sturdy dry-bag for trail trash carry-out</li>
-            <li>Solar-rechargeable LED headlamp</li>
+            <li>Non-nano zinc oxide mineral sunscreen (100% reef and freshwater safe)</li>
+            <li>Concentrated biodegradable, unscented trail wash</li>
+            <li>Silicone waterproof food pouches and reusable spork</li>
+            <li>Hollow-fiber membrane water filtration squeeze bag</li>
+            <li>Pack-it-out odor-proof waste canister</li>
           </ul>
         `
       },
-      'community': {
-        title: 'Community-Powered Tourism: Why Local Voices Matter',
+      'wildlife': {
+        title: 'Quiet Observers: Ethical Wildlife Photography in Fragile Habitats',
+        category: 'Wildlife and Nature',
+        readTime: '6 min read',
+        date: 'Sep 28, 2026',
+        img: 'assets/images/blog-wildlife.webp',
+        content: `
+          <p>Encountering animals in their native habitats is among the most profound joys of exploration. Yet improper tourist conduct can alter natural foraging behaviors, induce stress, and trigger dangerous habituation.</p>
+          <h4>Rule 1: Maintain Safe Distance (The Rule of Thumb)</h4>
+          <p>Extend your arm and hold your thumb out. If you cannot completely cover the animal with your thumb, you are too close. Back away slowly and quietly.</p>
+          <h4>Rule 2: Never Touch, Feed, or Lure Wildlife</h4>
+          <p>Feeding wild animals disrupts natural nutrition, makes them aggressive toward humans, and often leads to animals being euthanized by wildlife authorities.</p>
+          <h4>Rule 3: Skip Flash & Drone Interference</h4>
+          <p>Flash bursts disorient nocturnal species, and drone buzzing mimics predatory raptors, causing nests to be abandoned. Rely on telephoto lenses from safe observation hides.</p>
+        `
+      },
+      'ecolodge': {
+        title: 'Deconstructing the Eco-Lodge: What Makes a Stay Truly Sustainable',
+        category: 'Eco Accommodation',
+        readTime: '6 min read',
+        date: 'Sep 14, 2026',
+        img: 'assets/images/blog-ecolodge.webp',
+        content: `
+          <p>In an age where terms like "eco", "green", and "sustainable" are frequently used for marketing, how can conscientious travelers discern genuine eco-lodges from mere greenwashing?</p>
+          <h4>1. Closed-Loop Waste & Greywater</h4>
+          <p>Pristine ecosystems suffer when untreated greywater seeps into soils. Look for certified reed-bed bio-filtration, composting toilet loops, and zero plastic amenity packaging.</p>
+          <h4>2. Renewable Power Independence</h4>
+          <p>Check if the facility utilizes micro-hydro, rooftop photovoltaic arrays with lithium iron phosphate batteries, or passive thermal architectural cooling.</p>
+          <h4>3. Fair Village Employment & Co-Ownership</h4>
+          <p>True sustainability centers people. Sustainable lodges employ local residents in core administrative and guide capacities at living wages.</p>
+        `
+      },
+      'mountains': {
+        title: 'Pristine Valleys: Exploring Protected Mountain Biospheres',
+        category: 'Destination Guides',
+        readTime: '7 min read',
+        date: 'Aug 22, 2026',
+        img: 'assets/images/dest-mountain.webp',
+        content: `
+          <p>High-altitude mountain biospheres contain some of the planet's most fragile ecological zones. A single boot step off-trail can destroy fragile alpine tundra lichens that required over 60 years to develop.</p>
+          <h4>1. Stick to the Center of Established Switchbacks</h4>
+          <p>Cutting corners creates water channels that cause entire hillsides to erode during seasonal monsoon downpours.</p>
+          <h4>2. High-Altitude Camp Sanitation</h4>
+          <p>Camp at least 200 feet from fragile alpine tarns and glacial streams to prevent nitrogen and bacterial runoff into headwaters.</p>
+        `
+      },
+      'coastal_reef': {
+        title: 'Coastal Reefs: How to Snorkel Without Damaging Coral',
         category: 'Destination Guides',
         readTime: '5 min read',
-        date: 'Aug 28, 2026',
+        date: 'Aug 10, 2026',
+        img: 'assets/images/dest-coastal.webp',
+        content: `
+          <p>Coral reefs host 25% of all marine life despite occupying less than 1% of the ocean floor. Even minor physical contact can strip corals of their protective mucus coating, leaving them vulnerable to lethal infection.</p>
+          <h4>1. Master Horizontal Buoyancy</h4>
+          <p>Keep your fins parallel to the surface to prevent kicking up sand that smothers polyps or snaps delicate branching corals.</p>
+          <h4>2. Banish Oxybenzone & Octinoxate</h4>
+          <p>Chemical sunscreens bleach coral larvae at microscopic concentrations. Always choose certified non-nano zinc oxide mineral sun barriers.</p>
+        `
+      },
+      'community': {
+        title: 'Honoring Ancestral Lands: Community-Led Walking Narratives',
+        category: 'Culture & Community',
+        readTime: '5 min read',
+        date: 'Jul 29, 2026',
         img: 'assets/images/blog-community.webp',
         content: `
           <p>When travel is organized in true partnership with rural communities, it protects endangered ecosystems while preserving invaluable linguistic, culinary, and agricultural traditions.</p>
           <h4>Decentralized Travel</h4>
           <p>Steering travelers away from overcrowded mega-resorts and into rural homestays provides meaningful economic diversification for agricultural villages.</p>
+          <h4>Ethical Ethnographic Respect</h4>
+          <p>Always ask permission before photographing ceremonies or residences, and support local artisan cooperatives directly without middle-agent markups.</p>
+        `
+      },
+      'canopy': {
+        title: 'Canopy Walkways: Experiencing Ancient Forests Above the Rootline',
+        category: 'Wildlife & Nature',
+        readTime: '6 min read',
+        date: 'Oct 02, 2026',
+        img: 'assets/images/dest-forest.webp',
+        content: `
+          <p>Over 80% of rainforest biodiversity resides in the upper canopy. Suspended walkway systems allow researchers and respectful visitors to observe epiphytes, primates, and avian species without soil compaction.</p>
+          <h4>1. Non-Invasive Cable Rigging</h4>
+          <p>Modern ecotourism canopy walkways utilize friction collars that do not puncture the tree cambium or restrict growth rings.</p>
+          <h4>2. Microclimate Observation</h4>
+          <p>Observe how humidity, light intensity, and wind vary across vertical stratification layers from forest floor to emergent giants.</p>
+        `
+      },
+      'clean_energy': {
+        title: 'Solar & Micro-Hydro: Inside Clean Energy Off-Grid Sanctuaries',
+        category: 'Eco Accommodation',
+        readTime: '6 min read',
+        date: 'Sep 20, 2026',
+        img: 'assets/images/blog-sustainable.webp',
+        content: `
+          <p>Remote wilderness sanctuaries are eliminating noisy, polluting diesel generators in favor of clean, silent renewable energy microgrids.</p>
+          <h4>1. Run-of-River Micro-Hydro</h4>
+          <p>Diverting a small fraction of stream water through fish-safe intake flumes generates steady base-load electricity without building dams.</p>
+          <h4>2. Thermal Mass & Passive Cooling</h4>
+          <p>Employing natural cross-ventilation, green living roofs, and ram-earth masonry reduces cooling energy demand by up to 75%.</p>
+        `
+      },
+      'watersheds': {
+        title: 'Alpine Waters: Preserving Glacial Runoff & River Habitats',
+        category: 'Destination Guides',
+        readTime: '5 min read',
+        date: 'Sep 05, 2026',
+        img: 'assets/images/dest-waterfall.webp',
+        content: `
+          <p>Headwater streams and glacial tributaries supply drinking water for millions downstream and form vital spawning grounds for endemic aquatic species.</p>
+          <h4>1. Strict 200-Foot Wash Setback</h4>
+          <p>Even biodegradable soaps degrade aquatic oxygen when used directly in rivers. Always carry wash water 200 feet away before disposal.</p>
+          <h4>2. Microplastic-Free Gear Cleansing</h4>
+          <p>Rinse synthetic waders and pack rafts using filtered wash stations to prevent transferring invasive micro-algae between watersheds.</p>
         `
       }
     };
 
-    document.querySelectorAll('.blog-read-btn').forEach(btn => {
+    // Open article modal handler
+    const handleArticleOpen = (key) => {
+      const data = articleData[key] || articleData['featured'];
+      if (!data) return;
+
+      const modal = document.getElementById('blogArticleModal') || document.getElementById('blogModal');
+      if (!modal) return;
+
+      const titleEl = modal.querySelector('#blogModalTitle, .blog-modal-title');
+      if (titleEl) titleEl.textContent = data.title;
+
+      const metaEl = modal.querySelector('#blogModalMeta');
+      if (metaEl) {
+        metaEl.innerHTML = `
+          <span><i class="fa-solid fa-tag"></i> ${data.category}</span>
+          <span><i class="fa-solid fa-clock"></i> ${data.readTime}</span>
+          <span><i class="fa-solid fa-calendar"></i> ${data.date}</span>
+        `;
+      }
+
+      const bodyEl = modal.querySelector('#blogModalBody, .blog-modal-content');
+      if (bodyEl) {
+        bodyEl.innerHTML = `
+          <div style="margin-bottom: 20px; border-radius: 12px; overflow: hidden; max-height: 320px;">
+            <img src="${data.img}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+          ${data.content}
+        `;
+      }
+
+      openModal(modal.id);
+    };
+
+    document.querySelectorAll('.blog-read-btn, [data-blog-modal], [data-article-key]').forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
-        const articleKey = btn.getAttribute('data-article-key');
-        const data = articleData[articleKey];
-        if (!data) return;
-
-        const modal = document.getElementById('blogModal');
-        if (!modal) return;
-
-        modal.querySelector('.blog-modal-title').textContent = data.title;
-        modal.querySelector('.blog-modal-cat').textContent = data.category;
-        modal.querySelector('.blog-modal-time').textContent = data.readTime;
-        modal.querySelector('.blog-modal-date').textContent = data.date;
-        modal.querySelector('.blog-modal-img').src = data.img;
-        modal.querySelector('.blog-modal-content').innerHTML = data.content;
-
-        openModal('blogModal');
+        const articleKey = btn.getAttribute('data-blog-modal') || btn.getAttribute('data-article-key') || 'featured';
+        handleArticleOpen(articleKey);
       });
     });
   }
@@ -1820,9 +1916,10 @@
           feedback.className = 'newsletter-feedback error';
           feedback.style.color = '#ff4d4f';
           feedback.style.display = 'block';
-          feedback.style.marginTop = '8px';
+          feedback.style.marginTop = '10px';
+          feedback.style.textAlign = 'center';
           feedback.style.fontWeight = '600';
-          feedback.style.fontSize = '0.82rem';
+          feedback.style.fontSize = '0.85rem';
           return;
         }
 
@@ -1833,9 +1930,10 @@
           feedback.className = 'newsletter-feedback error';
           feedback.style.color = '#ff4d4f';
           feedback.style.display = 'block';
-          feedback.style.marginTop = '8px';
+          feedback.style.marginTop = '10px';
+          feedback.style.textAlign = 'center';
           feedback.style.fontWeight = '600';
-          feedback.style.fontSize = '0.82rem';
+          feedback.style.fontSize = '0.85rem';
           return;
         }
 
@@ -1844,11 +1942,15 @@
         feedback.className = 'newsletter-feedback success';
         feedback.style.color = '#52c41a';
         feedback.style.display = 'block';
-        feedback.style.marginTop = '8px';
+        feedback.style.marginTop = '10px';
+        feedback.style.textAlign = 'center';
         feedback.style.fontWeight = '600';
-        feedback.style.fontSize = '0.82rem';
-        showDemoToast('Subscribed to newsletter!', 'success');
+        feedback.style.fontSize = '0.85rem';
         if (emailInput) emailInput.value = '';
+
+        setTimeout(() => {
+          window.location.href = '404.html';
+        }, 300);
       });
     });
   }
@@ -1863,6 +1965,22 @@
   function showFieldError(input, message) {
     if (!input) return;
     input.classList.add('is-invalid');
+
+    // Never inject .form-error inside newsletter input group (breaks flex layout)
+    if (input.closest('.newsletter-input-group')) {
+      const form = input.closest('form');
+      const fb = form ? form.querySelector('.newsletter-feedback') : null;
+      if (fb) {
+        fb.textContent = message;
+        fb.className = 'newsletter-feedback error';
+        fb.style.color = '#ff4d4f';
+        fb.style.display = 'block';
+        fb.style.marginTop = '10px';
+        fb.style.textAlign = 'center';
+      }
+      return;
+    }
+
     const container = input.closest('.form-group') || input.closest('.checkbox-group') || input.parentElement;
     if (container) {
       let errorEl = container.querySelector('.form-error');
@@ -1954,12 +2072,12 @@
       }
 
       // DO NOT TOUCH MODALS, TABS, PASSWORD EYE TOGGLE, OR BACK-TO-TOP
-      if (target.closest('.modal, .modal-close, [data-modal-close], .back-to-top, #backToTop, .password-toggle, .toggle-password, .tab-btn, [data-tab]')) {
+      if (target.closest('.modal, .modal-close, [data-modal-close], .back-to-top, #backToTop, .password-toggle, .toggle-password, .tab-btn, [data-tab], [data-blog-modal], [data-article-key], .blog-read-btn, .reading-item-title')) {
         return;
       }
 
-      // If it is a form submit button, allow the form submission validator to handle validation first
-      if (target.tagName === 'BUTTON' && target.type === 'submit') {
+      // If it is a form submit button inside a form, allow the form submission validator to handle validation first
+      if (target.tagName === 'BUTTON' && target.type === 'submit' && target.closest('form')) {
         return;
       }
 
@@ -1976,8 +2094,8 @@
     // 4. Universal Form Validation Handler across all forms
     // "if there is any form then add the validation then after also go to 404 page."
     document.querySelectorAll('form').forEach(form => {
-      // Skip login and signup forms as they have their own strict handler
-      if (form.id === 'loginForm' || form.id === 'signupForm') return;
+      // Skip login, signup, and newsletter forms as they have their own strict dedicated handlers
+      if (form.id === 'loginForm' || form.id === 'signupForm' || form.classList.contains('newsletter-form') || form.classList.contains('newsletter-form-box')) return;
 
       form.addEventListener('submit', (e) => {
         e.preventDefault();
